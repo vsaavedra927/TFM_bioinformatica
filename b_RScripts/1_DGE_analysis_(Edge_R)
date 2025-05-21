@@ -1,0 +1,255 @@
+rm(list=ls())
+
+# ---------------------------------------- DIFFERENTIAL GENE EXPRESSION ANALYSIS -----------------------------------------#
+
+# The read counts for this analysis were obtained through RNA sequencing of 22 blood samples (Paired data). The QIASeq UPX
+# 3' Transcriptome Kit was used for this end. The libraries were sequenced on the NextSeq Mid-output kit with R1 = 151bp
+# and R2 = 27bp. The way the library is constructed means that we only get a single fastq for the whole library, rather than one 
+# per sample and we have used the Qiagen analysis tool to demultiplex the data and get the read counts for each gene in 
+# each sample. 
+
+# A dataset of Gene Expression level (READ COUNTS) of the samples is the input of this script along with info about quality
+# control check for each sample and the classifcation table. 
+
+# This is the first approach to analysis of this data. 
+
+# ---> LIBRARIES: ----
+
+library(edgeR)
+library(ggplot2)
+library(gplots) 
+library(ggrepel)
+
+# ---> INPUT AND OUTPUT: ----
+
+# In this section please specify where are the input files and where you want to save the output files.
+# In the input and output variable you can see what is the path expected from the user to write.
+
+input <- "C:/Users/victo/OneDrive/Escritorio/UNIR/TFM/Analisis/a_RawData/1_2019Souza_data/"
+output <- "C:/Users/victo/OneDrive/Escritorio/UNIR/TFM/Analisis/c_Resultados/1_2019Souza_results/"
+
+# !!!! IMPORTANT: For this script to work the READ COUNTS FILE has to be called: 1_DGE_analysis_(Edge_R)_read_counts.txt
+# (He cambiado esto) !!!! IMPORTANT: For this script to work the CLASSIFICATION FILE has to be called: 1_DGE_analysis_(Edge_R)_sample_info.txt
+
+
+# ---> DATA LOAD: ----
+
+# Open the txt file with the gene expression information (read counts). 
+
+# The dataset consist in a tab-delimited file in .txt format with the follow specifications: 
+# Columns: The different samples (each patient data).
+# Rows: The gene read counts.
+# See a_Data/1_DGE_analysis_(Edge_R)/1_DGE_analysis_(Edge_R)_read_counts.txt
+
+read_counts <- read.table(
+  file = paste(input, "1_DGE_analysis_(Edge_R)_read_counts.txt", sep = ""),
+  header = TRUE,
+  sep = "\t")
+
+# Some genes are presented twice in the file (perhaps because a name problem during the mapping or some dupplication
+# issue), but it's only a couple of them so it's safe to get rid off the duplicates. 
+# Y convertimos la columna de nombres en nombres de fila
+
+read_counts <- read_counts[!duplicated(read_counts$X), ] # Eliminate duplicates
+row.names(read_counts) <- read_counts$X
+read_counts$X <- NULL
+
+# Open the txt file with the classification table (samples, groups, subject, batchs and quality): 
+
+# The table consist in 5 columns: 
+# - Column "sample": with the different sample IDs.
+# - Column "group": placebo or oil group samples. 
+# - Column "batch": the RNA seq was made in two batches and it has to be considered for this analysis.
+# - Column "subject": to specify paired samples.
+# - Column "quality": specify which samples passed the quality control steps. Parece que los "no" estan apareados en los mismos sujetos: placebo y oils del mismo sujeto.
+
+classification <- read.table(
+  file = paste(input, "1_DGE_analysis_(Edge_R)_sample_info.txt", sep = ""),
+  header = TRUE,
+  sep = "\t")
+
+# Only considers the samples with the "ok" quality check. 
+
+classification <- classification[classification$quality == "ok", ]
+
+
+# ---> DATA PREPARATION: ----
+
+# Keep only the good samples: 
+
+read_counts <- read_counts[ ,as.vector(classification$sample)]
+
+# Create factors with groups, batchs and subjects:
+# We need the group, batchs and subjects as factors for the design in the DGE analysis. 
+
+groups <- factor(classification$group) 
+names(groups) <- names(read_counts) # Keep the sample names in the group factor.
+groups <- relevel(groups, ref = "Placebo") # Make sure that Placebo (control) becomes the reference factor.
+                                           # This helps for not making mistakes at the moment of doing the 
+                                           # comparison that you want to make.
+
+batchs <- factor(classification$batch) # Batch as a factor.
+subjects <- factor(classification$subject) # Subjects as a factor for the paired analysis. 
+
+# Create the DDGEList object:
+
+# DGEList takes raw counts. Not normalization step is required at this point. 
+
+read_data <- DGEList(counts = read_counts, group = groups)
+
+# Filtering and normalization: 
+
+# Gene to be expressed at a reasonable level in a sample if it has two counts per each million mapped reads in that sample. 
+# Gene should be expressed in at least 18 (half of the samples since is a paired analysis) to be in at least one of the conditions. 
+
+keep <- rowSums(cpm(read_data)>2) >= 18 # Save only the genes that fullfil the condition. 
+filter_read_data <- read_data[keep, , keep.lib.sizes = FALSE] # New DGEList object with only the filtered genes.
+
+# Normalization: 
+
+# Counts per million: 
+# This normalization of counts per million has to be made before the other normalization, because it will be like
+# normalizing over something that has been already normalized. This is for visualization: scatter and violin plots (for
+# example). 
+
+cpm_normalized_filter_reads <- cpm(filter_read_data)
+
+# TMM normalization: (usado por defecto en calcNormFactors; puede cambiarse en parámetro method)
+# Trimmed mean of Mvalues (TMM) between each pair of samples. We call the product of the original library size and 
+# the scaling factor the effective library size. The EFFECTIVE LIBRARY SIZE replaces the original library size in all 
+# downstream analyses. TMM is the recommended for most RNA-Seq data where the majority (more than half) of the genes are 
+# believed not differentially expressed between any pair of the samples. 
+
+filter_read_data <- calcNormFactors(filter_read_data)
+
+# Save the CPM from the filtered data. 
+
+write.table(cpm_normalized_filter_reads, 
+            file = paste(output, "1_CPM_values.txt", sep = ""), 
+            sep = "\t",
+            quote = FALSE,
+            row.names = TRUE)
+
+# Para ver el archivo recien creado en formato tabla
+cpm_reads_txt <- read.table(
+  file = paste(output, "1_CPM_values.txt", sep = ""),
+  header = TRUE,
+  sep = "\t")
+
+
+# ---> DIFFERENTIAL GENE ANALYSIS (EDGER): ----
+
+# Edge R does differential expression analysis of RNA-seq expression profiles with biological replication. 
+# Implements a range of statistical methodology based on the negative binomial distributions, including empirical 
+# Bayes estimation, exact tests, generalized linear models and quasi-likelihood tests. 
+
+design <- model.matrix(~subjects+batchs+groups) 
+rownames(design) <- colnames(read_data)
+
+# The design define how the response variable (DGE for each gene) is explained by the explained variables. In this
+# case we are considering the group, the batch and the subject as explained variables (because is a paired sample 
+# experiment). 
+
+# Estimate dispersion and have in consideration possible outliers. 
+# Robust = TRUE -> Robustified against potential outlier genes.
+
+filter_read_data_d <- estimateDisp(filter_read_data, design, robust = TRUE) 
+
+# Here we run the statistical analysis that checks the DGE:
+# We have two options: Likelihood ratio test and quasi-likelihood F test. 
+# The consensus said that the second one (quasi-likelihood F test) is best.
+# The first one (likelihood ratio test) is recommended for Single Cell RNA seq and experiments with no replicates.
+
+fit_filter_data <- glmQLFit(filter_read_data_d, design, robust = TRUE)
+qlf_data_filter <- glmQLFTest(fit_filter_data)
+
+# The results of the DGE analysis can be seen as a data frame that contains for each gene the next information:
+# LogFC (Log(FoldChange)).
+# LogCPM (Log(CountPerMillion)).
+# F value.
+# p value and adjust p value (FDR), in this case using the BH correction. 
+
+table_data_filter <- as.data.frame(topTags(qlf_data_filter, n = Inf, adjust.method = "BH", sort.by = "PValue"))
+
+
+# ---> OUTPUT: ----
+
+# The Output of this section is a tab-delimited table with the information of DGE results: 
+
+# Guardamos archivo txt con los resultados del Differential Gene Expression analysis
+write.table(table_data_filter, 
+            file = paste(output, "1_DGE_results.txt", sep = ""), 
+            sep = "\t",
+            quote = FALSE,
+            row.names = TRUE)
+
+# Para ver el archivo recien creado en formato tabla
+DGE_results_txt <- read.table(
+  file = paste(output, "1_DGE_results.txt", sep = ""),
+  header = TRUE,
+  sep = "\t")
+
+# Generamos archivo para el GO analysis: solamente nombres de gen y adj p-values
+DGE_pvalues_list <- data.frame(
+  gene = rownames(DGE_results_txt),
+  p_values = format(DGE_results_txt$FDR, scientific = FALSE)
+)
+# Guardamos archivo
+write.table(DGE_pvalues_list, 
+            file = paste(output, "1_DGE_p_values_list_for_GO.txt", sep = ""), 
+            sep = "\t",
+            quote = FALSE,
+            row.names = FALSE)
+
+# Get the significant genes to make the Volcano Plot: 
+# Prefiltro de genes a mostrar en el volcano plot
+# FILTRO: Pvalue < 0.1
+edge_sig_all <- table_data_filter[(table_data_filter$PValue < 0.1), ] # A table with only the statistical significance genes (p-value < 0.1). 
+edge_sig_all$gene <- rownames(edge_sig_all)   # Inserto nombres de fila (nombres de genes) como columna $gene
+
+# Separamos los genes sobreexpresados (logFC positivo) e infraexpresados (logFC negativo)
+# FILTRO: FDR < 0.1
+edge_sig <- head(edge_sig_all, n = 10)   # Etiquetas de solo los 10 primeros genes
+edge_sig_pos <- edge_sig_all[(edge_sig_all$logFC > 0) & (edge_sig_all$FDR < 0.1), ]  # Genes estadísticamente significativos con logFC positivo
+edge_sig_neg <- edge_sig_all[(edge_sig_all$logFC < 0) & (edge_sig_all$FDR < 0.1), ]  # Genes estadísticamente significativos con logFC negativo.
+#edge_sig_pv <- table_data_filter[(table_data_filter$FDR < 0.1), ]
+
+
+# REPRESENTACION GRAFICA
+
+# Abrir el dispositivo pdf (para guardar como pdf)
+pdf(file = paste(output, "1_DGE_Volcano_plot_result.pdf", sep = ""), 
+    width = 25, height = 12, onefile = TRUE)
+
+# Crear volcano plot: incluir todos los genes pero resaltar los mas significativos
+ggplot(table_data_filter, aes(logFC,-log10(PValue))) +  #Volcano plot tiene eje x: LogFC ; eje y: -log10(P.value)  
+  # Grafico de puntos (cambiado a gris mas claro); nombres de ejes x, y
+  geom_point(colour = "gray") +
+  scale_y_continuous(name = "-Log10(p value)") +
+  scale_x_continuous(name = "Log2(Fold Change)") +
+  # Etiquetas de genes significativos
+  geom_text_repel(data = edge_sig_pos, position = "identity", aes(label = gene), size = 8) +
+  geom_text_repel(data = edge_sig_neg, position = "identity", aes(label = gene), size = 8) +
+  # Colorear puntos significativos
+  # · if (nrow(edge_sig_pos) > 0): si hay al menos un gen significativo (con 0 podria dar error)
+  # · Genes sobreexpresados en rojo, infraexpresados en azul
+  {if (nrow(edge_sig_pos) > 0) geom_point(data = edge_sig_pos[edge_sig_pos$logFC > 0, ], 
+                                         aes(logFC,-log10(PValue)), color = "red3") } + 
+  {if (nrow(edge_sig_neg) > 0) geom_point(data = edge_sig_neg[edge_sig_neg$logFC < 0, ], 
+                                         aes(logFC,-log10(PValue)), color = "dodgerblue2") } +
+  # Linea horizontal de corte de p-value = 0.05
+  geom_hline(yintercept = -log10(0.05), color = "black", linetype = "dashed", size = 1) + 
+  geom_text(aes(1.70, -log10(0.05), label = "p value = 0.05", vjust = 1.2), color = "gray0", size = 7.5) + 
+  # Personalizacion: sin leyenda; tamaño y color de ejes; sin cuadricula (grid) de fondo; margenes amplios
+  theme(legend.position = "none",
+        axis.title = element_text(size = 25),
+        axis.text.x  =  element_text(size = 20, hjust = 1, colour = "black"),
+        axis.text.y  = element_text(size = 20, hjust = 1, colour = "black"),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(colour = "black"),
+        plot.margin=unit(c(1, 3, 1, 3), "cm"))  
+
+# Cerrar dispositivo pdf
+dev.off()
