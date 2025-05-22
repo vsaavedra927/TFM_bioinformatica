@@ -53,14 +53,14 @@ genes_p_value <- read.table(
 
 genome_GO_terms <- readMappings(file = paste(input_goterms, "2_GO_Human_go_terms.txt", sep = ""))
 
-#---> DATA PREPARATION: 
+#---> DATA PREPARATION: ----
 
 # Transform genes and p values table in the genelist format requieres for TopGO:
 
 topgo_genes <- genes_p_value$p_value
 names(topgo_genes) <- genes_p_value$gene
 
-#---> GENE ONTOLOGY ANALYSIS: 
+#---> GENE ONTOLOGY ANALYSIS: ----
 
 # The gene ontology analysis runs for all the GO categories: Biological process (BP), 
 # Molecullar Function (MF) and Cellular Component (CC). 
@@ -119,7 +119,7 @@ for (go_category in c("BP", "MF", "CC")) {
   ks_results_sig <- ks_results_sig[!(ks_results_sig$genes_id == ""), ]
   
     
-  # ---> OUTPUT:
+  # ---> OUTPUT DE GO TERMS:
   
   # Print all GO terms of interest:
   
@@ -141,4 +141,34 @@ for (go_category in c("BP", "MF", "CC")) {
               file = paste(output, "2_", go_category, "_significant_enriched_GO_terms.tsv", sep = ""),
               row.names = FALSE,
               sep  = "\t")
+  
+  
+  #---> OUTPUT CON BARPLOT: ----
+  
+  # Nuevas columnas: con log_pval, y etiquetas de GO_terms completas
+  ks_results_sig$log_pval <- -log10(ks_results_sig$weight_ks_adjusted)
+  ks_results_sig$Term_GO <- paste0(ks_results_sig$Term, " (", ks_results_sig$GO.ID, ")")
+ 
+  # Barplot
+  p <- ggplot(ks_results_sig, aes(x = reorder(Term_GO, log_pval), y = log_pval)) +
+    geom_bar(stat = "identity", fill = "steelblue") +
+    coord_flip() +
+    theme_minimal(base_size = 13) +
+    labs(
+      x = "Término GO",
+      y = "-log10(p)",
+      title = paste0("Términos GO más enriquecidos (", go_category, ")")
+    ) 
+  
+  # Guardar como imagen PNG
+  ggsave(
+    filename = paste0(output, "2_", go_category, "_barplot.png"),
+    plot = p,
+    width = 10,
+    height = 7,
+    dpi = 300
+  )
+  
 }
+
+
