@@ -160,12 +160,15 @@ for (go_category in c("BP", "MF", "CC")) {
       title = paste0("Términos GO más enriquecidos (", go_category, ")")
     ) 
   
+  # Determinar el alto de imagen dinámico
+  height_val <- if (nrow(ks_results_sig) > 50) 14 else 7
+  
   # Guardar como imagen PNG
   ggsave(
     filename = paste0(output, "2_", go_category, "_barplot.png"),
     plot = p,
     width = 10,
-    height = 7,
+    height = height_val,
     dpi = 300
   )
   
