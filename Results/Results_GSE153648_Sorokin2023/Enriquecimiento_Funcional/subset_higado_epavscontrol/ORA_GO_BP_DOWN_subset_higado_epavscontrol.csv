@@ -1,0 +1,2 @@
+ID,Description,GeneRatio,BgRatio,RichFactor,FoldEnrichment,zScore,pvalue,p.adjust,qvalue,geneID,Count
+GO:0035634,response to stilbenoid,2/8,24/14300,0.08333333333333333,148.95833333333331,17.162996132220208,7.512449863705295e-5,0.02674432151479085,0.015024899727410591,Mup3/Slc22a7,2
