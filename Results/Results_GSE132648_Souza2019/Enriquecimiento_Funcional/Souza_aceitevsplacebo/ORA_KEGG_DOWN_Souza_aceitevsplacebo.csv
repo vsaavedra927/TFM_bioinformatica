@@ -1,0 +1,2 @@
+category,subcategory,ID,Description,GeneRatio,BgRatio,RichFactor,FoldEnrichment,zScore,pvalue,p.adjust,qvalue,geneID,Count
+Organismal Systems,Immune system,hsa04662,B cell receptor signaling pathway,1/2,78/6702,0.01282051282051282,42.96153846153846,6.440001188724959,0.023142900009445633,0.046285800018891265,0.024360947378363824,55024,1
