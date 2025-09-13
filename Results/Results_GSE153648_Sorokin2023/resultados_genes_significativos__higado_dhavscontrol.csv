@@ -1,3 +1,0 @@
-﻿"gen","media de conteos normalizados","log2 fold change","error estandar de LFC","estadistico de Wald","p-value","p-value ajustado"
-"Mup2",222,6.04,0.97,6.2,"< 0.001","< 0.0001 (****)"
-"Hsp90b1",384,-0.586,0.12,-4.98,"< 0.001","0.006 (**)"
