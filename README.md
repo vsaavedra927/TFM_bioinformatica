@@ -28,9 +28,8 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 | **README.md** | Este documento. |
 
 
-<summary>Vista en árbol</summary>  
+## Vista en árbol
 
-    
 ```
 TFM_bioinformatica/
 ├─ Datasets/
