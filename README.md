@@ -1,8 +1,8 @@
 # TFM_bioinformatica
 
-Análisis de RNA-seq para el TFM: preprocesado de conteos, DESeq2, y enriquecimiento funcional (GO/KEGG/Reactome).
+Este repositorio contiene conjuntos de datos de GEO procedentes de RNA-seq, scripts en R para análisis de expresión diferencial y enriquecimiento funcional, y los resultados generados.
 
-> **Resumen**: Este repositorio contiene datasets desde GEO, scripts en R para análisis diferencial y enriquecimiento, y los resultados generados.
+Análisis de RNA-seq: preprocesado de conteos, DESeq2, y enriquecimiento funcional (GO/KEGG/Reactome).
 
 ## Índice
 - [Estructura del repositorio](#estructura-del-repositorio)
@@ -25,14 +25,12 @@ Análisis de RNA-seq para el TFM: preprocesado de conteos, DESeq2, y enriquecimi
 
 
 flowchart LR
-A[Datasets] --> B[DESeq2]
-B --> C[Results]
-C --> D[Enriquecimiento]
+[Datasets RNA-seq] --> [DESeq2] --> [Results] --> [Enriquecimiento]
 
 
 
 <details>
-<summary>Vista en árbol (resumida)</summary>
+Vista en árbol (resumida)
 
 
 **Datasets**: Contiene los datos crudos sin editar, extraídos de GEO, que serán utilizados en los scripts.
