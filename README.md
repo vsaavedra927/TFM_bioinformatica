@@ -62,8 +62,10 @@ TFM_bioinformatica/
 │  ├─ RNAseq_GSE153648_Sorokin2023.R
 │  └─ RNAseq_funciones.R
 └─ README.md
-```
+
 Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
+```
+
 
 **(*) <figuras_expresion_diferencial>.png**  
     
@@ -78,8 +80,10 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ├─ pca_plot_*.png
 ├─ volcano_plot_*.png
 └─ volcano_plot_labels_*.png
-```
+
 * distinto para cada subset (tejido y combinación de tratamientos)  
+```
+
 
 
 **(*) <tablas_GSEA/ORA>.csv**  
@@ -95,8 +99,10 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ├─ ORA_KEGG_UP_*.csv
 ├─ ORA_Reactome_DOWN_*.csv
 └─ ORA_Reactome_UP_*.csv
-```
+
 * distinto para cada subset (tejido y combinación de tratamientos)  
+```
+
 
 
 **(*) <figuras_GSEA/ORA>.png**  
@@ -123,8 +129,10 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ├─ ORA_KEGG_UP_dotplot_*.png
 ├─ ORA_Reactome_DOWN_dotplot_*.png
 └─ ORA_Reactome_UP_dotplot_*.png
-```
+
 * distinto para cada subset (tejido y combinación de tratamientos)
+```
+
 
 
 </details>
