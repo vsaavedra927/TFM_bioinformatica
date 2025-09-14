@@ -29,7 +29,7 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 
 
 <details>
-<summary>Vista en árbol</summary>
+<summary>Vista en árbol</summary>  
 
     
 ```
@@ -63,9 +63,9 @@ TFM_bioinformatica/
 │  └─ RNAseq_funciones.R
 └─ README.md
 ```
-Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
+Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
 
-(*) <figuras_expresion_diferencial>.png
+(*) <figuras_expresion_diferencial>.png  
 <details>
      
 ```
@@ -80,11 +80,11 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ├─ volcano_plot_*.png
 └─ volcano_plot_labels_*.png
 ```
-* distinto para cada subset (tejido y combinación de tratamientos)
+* distinto para cada subset (tejido y combinación de tratamientos)  
 </details>
 
-(*) <tablas_GSEA/ORA>.csv
-(GSEA para GO:BP, KEGG, Reactome; ORA de genes DOWN y UP para GO:BP, KEGG, Reactome)
+(*) <tablas_GSEA/ORA>.csv  
+(GSEA para GO:BP, KEGG, Reactome; ORA de genes DOWN y UP para GO:BP, KEGG, Reactome)  
 <details>
      
 ```
@@ -98,12 +98,12 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ├─ ORA_Reactome_DOWN_*.csv
 └─ ORA_Reactome_UP_*.csv
 ```
-* distinto para cada subset (tejido y combinación de tratamientos)
+* distinto para cada subset (tejido y combinación de tratamientos)  
 </details>
 
-(*) <figuras_GSEA/ORA>.png
-(GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos; 
- ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP))
+(*) <figuras_GSEA/ORA>.png  
+(GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
+ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP))  
  <details>
      
 ```
