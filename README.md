@@ -29,26 +29,58 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 
 
 <details>
-<summary>Vista en árbol (resumida)</summary>
-    </details>
+<summary>Vista en árbol</summary>
+
     
 ```
 TFM_bioinformatica/
 ├─ Datasets/
-│ ├─ GSE132648_Souza2019/
-│ └─ GSE153648_Sorokin2023/
+│  ├─ GSE132648_Souza2019/
+│  │  ├─ <conteos>.txt
+│  │  └─ <diseño>.png
+│  └─ GSE153648_Sorokin2023/
+│     ├─ <conteos>.xlsx
+│     └─ <diseño>.png
 ├─ Results/
-│ ├─ Results_GSE132648_Souza2019/
-│ ├─ Results_GSE153648_Sorokin2023/
-│ └─ Enriquecimiento_Funcional/
-│ └─ <label_de_contraste>/
+│  ├─ Results_GSE132648_Souza2019/
+│  │  ├─ resultados_genes_significativos__all.csv
+│  │  ├─ (*) <figuras_expresion_diferencial>.png
+│  │  └─ Enriquecimiento_Funcional/
+│  │     └─ Souza_aceitevsplacebo/
+│  │        ├─ (*) <tablas_GSEA/ORA>.csv
+│  │        └─ (*) <figuras_GSEA/ORA>.png
+│  ├─ Results_GSE153648_Sorokin2023/
+│  │  ├─ (*) resultados_genes_significativos__<tejido>_<trat1vstrat2>.csv
+│  │  ├─ (*) <figuras_expresion_diferencial>.png
+│  │  └─ Enriquecimiento_Funcional/
+│  │     └─ (*) subset_<tejido>_<trat1vstrat2>/
+│  │        ├─ (*) <tablas_GSEA/ORA>.csv
+│  │        └─ (*) <figuras_GSEA/ORA>.png
+│  └─ resultados_genes_significativos.xlsx
 ├─ Scripts/
-│ ├─ RNAseq_funciones.R
-│ ├─ RNAseq_GSE132648_Souza2019.R
-│ └─ RNAseq_GSE153648_Sorokin2023.R
+│  ├─ RNAseq_GSE132648_Souza2019.R
+│  ├─ RNAseq_GSE153648_Sorokin2023.R
+│  └─ RNAseq_funciones.R
 └─ README.md
 ```
+Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
+(*) <figuras_expresion_diferencial>.png
+```
+├─ correlation_heatmap_*.png
+├─ estimateddispersion_plot_*.png
+├─ expression_heatmap_*.png
+├─ expression_plot_*_<top_n_genes>.png
+├─ expression_plot_emparejado_*.png
+├─ meanvar_plot_*.png
+├─ pca3D_plot_*.png
+├─ pca_plot_*.png
+├─ volcano_plot_*.png
+└─ volcano_plot_labels_*.png
+
+```
+
+</details>
 
 
 ---
