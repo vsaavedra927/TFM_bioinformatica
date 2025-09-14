@@ -65,9 +65,8 @@ TFM_bioinformatica/
 ```
 Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
 
-(*) <figuras_expresion_diferencial>.png  
-<details>
-     
+**(*) <figuras_expresion_diferencial>.png**  
+    
 ```
 ├─ correlation_heatmap_*.png
 ├─ estimateddispersion_plot_*.png
@@ -81,11 +80,10 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 └─ volcano_plot_labels_*.png
 ```
 * distinto para cada subset (tejido y combinación de tratamientos)  
-</details>
 
-(*) <tablas_GSEA/ORA>.csv  
+
+**(*) <tablas_GSEA/ORA>.csv**  
 (GSEA para GO:BP, KEGG, Reactome; ORA de genes DOWN y UP para GO:BP, KEGG, Reactome)  
-<details>
      
 ```
 ├─ GSEA_GO_BP_*.csv
@@ -99,12 +97,11 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 └─ ORA_Reactome_UP_*.csv
 ```
 * distinto para cada subset (tejido y combinación de tratamientos)  
-</details>
 
-(*) <figuras_GSEA/ORA>.png  
+
+**(*) <figuras_GSEA/ORA>.png**  
 (GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
  ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP))  
- <details>
      
 ```
 ├─ GSEA_GO_BP_dotplot_*.png
@@ -128,7 +125,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 └─ ORA_Reactome_UP_dotplot_*.png
 ```
 * distinto para cada subset (tejido y combinación de tratamientos)
-</details>
+
 
 </details>
 
