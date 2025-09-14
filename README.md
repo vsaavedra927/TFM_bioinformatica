@@ -28,9 +28,17 @@ flowchart LR
 [Datasets RNA-seq] --> [DESeq2] --> [Results] --> [Enriquecimiento]
 
 
+flowchart LR
+Counts[Conteos (GEO)] --> DESeq2
+DESeq2 --> DEG[Genes DE]
+DEG -->|UP/DOWN| ORA[ORA GO/KEGG/Reactome]
+DESeq2 -->|ranking 'stat'| GSEA[GSEA GO/KEGG/Reactome]
+GSEA --> Fig[Figuras y CSV]
+ORA  --> Fig
+
 
 <details>
-Vista en árbol (resumida)
+<summary>Vista en árbol (resumida)</summary>
 
 
 **Datasets**: Contiene los datos crudos sin editar, extraídos de GEO, que serán utilizados en los scripts.
