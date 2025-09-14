@@ -31,7 +31,7 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 <details>
 <summary>Vista en árbol (resumida)</summary>
     </details>
-    
+```
 TFM_bioinformatica/
 ├─ Datasets/
 │ ├─ GSE132648_Souza2019/
@@ -46,7 +46,7 @@ TFM_bioinformatica/
 │ ├─ RNAseq_GSE132648_Souza2019.R
 │ └─ RNAseq_GSE153648_Sorokin2023.R
 └─ README.md
-
+```
 
 
 
