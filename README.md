@@ -28,7 +28,6 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 | **README.md** | Este documento. |
 
 
-<details>
 <summary>Vista en árbol</summary>  
 
     
@@ -68,7 +67,6 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 
 **(*) <figuras_expresion_diferencial>.png**  
-    
 ```
 ├─ correlation_heatmap_*.png
 ├─ estimateddispersion_plot_*.png
@@ -87,8 +85,8 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 
 **(*) <tablas_GSEA/ORA>.csv**  
-(GSEA para GO:BP, KEGG, Reactome; ORA de genes DOWN y UP para GO:BP, KEGG, Reactome)  
-     
+GSEA para GO:BP, KEGG, Reactome;  
+ORA de genes DOWN y UP para GO:BP, KEGG, Reactome  
 ```
 ├─ GSEA_GO_BP_*.csv
 ├─ GSEA_KEGG_*.csv
@@ -106,9 +104,8 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 
 **(*) <figuras_GSEA/ORA>.png**  
-(GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
- ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP))  
-     
+GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
+ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP)  
 ```
 ├─ GSEA_GO_BP_dotplot_*.png
 ├─ GSEA_GO_BP_ridgeplot_*.png
@@ -133,9 +130,6 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 * distinto para cada subset (tejido y combinación de tratamientos)
 ```
 
-
-
-</details>
 
 
 ---
