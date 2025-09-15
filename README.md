@@ -190,8 +190,8 @@ C. [Conteos normalizados]
 
     
 ## Datasets
-Contiene los conteos crudos de RNA-seq sin editar, extraídos de GEO, que serán utilizados como input en los scripts.  
-Se incluye también un esquema del diseño experimental en ambos estudios.  
+Entrada (input) de los scripts.  
+Contiene los conteos crudos de RNA-seq sin editar, extraídos de GEO, y un esquema del diseño experimental en ambos estudios.  
   
 Corresponden a los siguientes conjuntos de datos de GEO:  
 - **GSE132648, publicado por Souza et al. (2019):** voluntarios humanos sanos suplementados con aceite marino enriquecido en omega-3 o placebo; muestras de sangre periférica.  
@@ -200,14 +200,18 @@ Corresponden a los siguientes conjuntos de datos de GEO:
 
 
 ## Results 
-Contiene los resultados obtenidos al aplicar los scripts.
+Salida (output) de los scripts.  
+Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.  
 - Results_GSE132648_Souza2019: carpeta con todos los resultados sobre los datos de humano.
-    -  Enriquecimiento_Funcional: resultados de enriquecimiento funcional.
+    -  Enriquecimiento_Funcional: resultados de enriquecimiento funcional (GSEA, ORA para GO:BP, KEGG, Reactome)
+    - [Figuras correlación entre muestras] ─→ heatmap correlacion, PCA, PCA 3D 
+
+
 - Results_GSE153648_Sorokin2023: carpeta con todos los resultados sobre los datos de ratón.
     -  Enriquecimiento_Funcional: resultados de enriquecimiento funcional para cada pareja de tratamientos de cada tejido.
 - resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel con todos los genes significativos del estudio.
 
-##Scripts
+## Scripts
 Contiene scripts de R; estos scripts usan como entrada los archivos de la carpeta Datasets y generan los archivos de la carpeta Results.
 - RNAseq_funciones.R : script con las funciones a utilizar.
 - RNAseq_GSE132648_Souza2019.R : script para analizar datos de Souza et al. (humano).
