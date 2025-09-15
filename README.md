@@ -150,23 +150,20 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP)
 ```
 [Conteos crudos de GEO]
 [Metadatos de GEO]
-   | GESTION SUBSETS Y METADATOS
-   ↓ 
+   ↓ GESTION SUBSETS Y METADATOS
 [Datos y metadatos adaptados]
    | ANÁLISIS DE EXPRESIÖN DIFERENCIAL con DESeq2
    | (EXPLORACIÓN DE LOS DATOS)
    ├─→ [Figuras correlación entre muestras] ─→ heatmap correlacion, PCA, PCA 3D
    | (MODELAJE DE EXPRESIÓN DIFERENCIAL)
    ├─→ [Figuras dispersión de datos] ─→ estimaciones de dispersión, media vs varianza
-   | (CÁLCULO DE RESULTADOS)
-   ↓ 
+   ↓ (CÁLCULO DE RESULTADOS)
 A. [Métricas estadísticas para cada gen (baseMean, log2FC, lfcSE, stat Wald, pvalue, padj)]
 B. [Lista de genes significativos UP y DOWN]
 C. [Conteos normalizados]
    |   | VISUALIZACIÓN DE RESULTADOS
    .   ├─→ [Tabla de genes significativos con métricas estadísticas]
    .   └─→ [Figuras: Resultados de expresión diferencial] ─→ heatmap, volcano plot, plot de expresión, plot de expresión emparejado
-   |
    | ANÁLISIS DE ENRIQUECIMIENTO FUNCIONAL
    A ─→ |ranking stat| ─→ [GSEA: GO/KEGG/Reactome]
    B ─→ |UP/DOWN| ─→ [ORA: GO/KEGG/Reactome]
