@@ -170,18 +170,22 @@ C. [Conteos normalizados]
 ```
 
 
+---
+
 ## Requisitos
 
-R (versión 4.4.2)
-BiocManager (3.20)
-Bioconductor (3.20)
+R (versión 4.4.2)  
+BiocManager (3.20)  
+Bioconductor (3.20)  
 
-Paquetes Bioconductor: 
-DESeq2 (1.46.0), GEOquery (2.74.0), SummarizedExperiment (1.36.0), biomaRt (2.62.1), org.Mm.eg.db (3.20.0), org.Hs.eg.db (3.20.0), clusterProfiler (4.14.6), enrichplot (1.26.6), ReactomePA (1.50.0). 
+**Paquetes Bioconductor:**  
+DESeq2 (1.46.0), GEOquery (2.74.0), SummarizedExperiment (1.36.0), biomaRt (2.62.1), org.Mm.eg.db (3.20.0), org.Hs.eg.db (3.20.0), clusterProfiler (4.14.6), enrichplot (1.26.6), ReactomePA (1.50.0).  
 
-Paquetes CRAN: 
-pheatmap (1.0.12), ggplot2 (3.5.2), dplyr (1.1.4), tidyr (1.3.1), tibble (3.2.1), readr (2.1.5), stringr (1.5.1), ggrepel (0.9.6), patchwork (1.3.0), plotly (4.10.4), scales (1.3.0), ggraph (2.2.2) y ggridges (0.5.6). 
+**Paquetes CRAN:**  
+pheatmap (1.0.12), ggplot2 (3.5.2), dplyr (1.1.4), tidyr (1.3.1), tibble (3.2.1), readr (2.1.5), stringr (1.5.1), ggrepel (0.9.6), patchwork (1.3.0), plotly (4.10.4), scales (1.3.0), ggraph (2.2.2) y ggridges (0.5.6).  
 
+
+---
 
     
 **Datasets**: Contiene los conteos crudos de RNA-seq sin editar, extraídos de GEO, que serán utilizados en los scripts; también los diseños experimentales.
