@@ -206,20 +206,20 @@ Contiene las figuras y tablas resultantes de los análisis de expresión diferen
 - Results_GSE153648_Sorokin2023: carpeta con todos los resultados sobre los datos de ratón.  
 - resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.  
 Dentro de ambas encontramos:  
-    -  Carpeta "Enriquecimiento_Funcional": resultados de enriquecimiento funcional (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)  
+    -  Carpeta "Enriquecimiento_Funcional": resultados de enriquecimiento (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)  
     -  Figuras de correlación entre muestras (demuestran homogeneidad de las muestras):  
-    -      heatmap de correlacion,  
-    -      PCA,  
-    -      PCA 3D.   
+        -  heatmap de correlacion,  
+        -  PCA,  
+        -  PCA 3D.   
     -  Figuras de dispersión de datos (demuestran aptitud del modelo estadístico):  
-    -      estimaciones de dispersión,  
-    -      media vs varianza.    
+        -  estimaciones de dispersión,  
+        -  media vs varianza.    
     -  Figuras de resultados de expresión diferencial:  
-    -      mapa de calor de expresión,  
-    -      plot de expresión de top N genes,  
-    -      plot de expresión emparejado de top N genes,  
-    -      volcano plot,  
-    -      volcano plot con etiquetas de genes significativos.    
+        -  mapa de calor de expresión,  
+        -  plot de expresión de top N genes,  
+        -  plot de expresión emparejado de top N genes,  
+        -  volcano plot,  
+        -  volcano plot con etiquetas de genes significativos.    
 
 
 ## Scripts
