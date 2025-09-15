@@ -189,7 +189,7 @@ C. [Conteos normalizados]
 ---
 
     
-##Datasets
+## Datasets
 Contiene los conteos crudos de RNA-seq sin editar, extraídos de GEO, que serán utilizados como input en los scripts.  
 Se incluye también un esquema del diseño experimental en ambos estudios.  
   
