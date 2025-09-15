@@ -204,8 +204,9 @@ Salida (output) de los scripts.
 Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.  
 - Results_GSE132648_Souza2019: carpeta con todos los resultados sobre los datos de humano.  
 - Results_GSE153648_Sorokin2023: carpeta con todos los resultados sobre los datos de ratón.  
-- resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.  
-Dentro de ambas encontramos:  
+- resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.
+    
+Dentro de ambas carpetas encontramos:  
     -  Carpeta "Enriquecimiento_Funcional": resultados de enriquecimiento (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)  
     -  Figuras de correlación entre muestras (demuestran homogeneidad de las muestras):  
         -  heatmap de correlacion,  
