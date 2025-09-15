@@ -204,24 +204,28 @@ Salida (output) de los scripts.
 Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.  
 - Results_GSE132648_Souza2019: carpeta con todos los resultados sobre los datos de humano.  
 - Results_GSE153648_Sorokin2023: carpeta con todos los resultados sobre los datos de ratón.  
-- resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.
-    
+- resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.    
+     
 Dentro de ambas carpetas encontramos:  
-    -  Carpeta "Enriquecimiento_Funcional": resultados de enriquecimiento (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)  
-    -  Figuras de correlación entre muestras (demuestran homogeneidad de las muestras):  
+    -  Figuras de correlación entre muestras (.png) (demuestran homogeneidad de las muestras):  
         -  heatmap de correlacion,  
         -  PCA,  
         -  PCA 3D.   
-    -  Figuras de dispersión de datos (demuestran aptitud del modelo estadístico):  
+    -  Figuras de dispersión de datos (.png) (demuestran aptitud del modelo estadístico):  
         -  estimaciones de dispersión,  
         -  media vs varianza.    
-    -  Figuras de resultados de expresión diferencial:  
+    -  Figuras de resultados de expresión diferencial (.png):  
         -  mapa de calor de expresión,  
         -  plot de expresión de top N genes,  
         -  plot de expresión emparejado de top N genes,  
         -  volcano plot,  
         -  volcano plot con etiquetas de genes significativos.    
-
+    -  Tabla de genes significativos con métricas estadísticas (.csv)
+    -  Carpeta "Enriquecimiento_Funcional": resultados de enriquecimiento (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)   
+    
+Los resultados de Souza son para un solo tejido (sangre periférica humana) y una sola comparación (aceite vs placebo).  
+Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel de ratón) y tres comparaciones (DHA vs control, EPA vs control, EPA vs DHA).  
+  
 
 ## Scripts
 Scripts de R.  
