@@ -148,13 +148,14 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP)
 ## Flujo del análisis
 
 ```mermaid
-flowchart LR
-A[Conteos crudos (GEO)] --> B[DESeq2]
-B --> C[Genes DE]
-C -->|UP/DOWN| D[ORA (GO/KEGG/Reactome)]
-B -->|ranking 'stat'| E[GSEA (GO/KEGG/Reactome)]
-D --> F[Figuras y CSV en Results/]
+graph LR
+A[Conteos crudos de GEO] --> B[DESeq2]
+B --> C[Genes diferencialmente expresados]
+C -->|UP/DOWN| D[ORA: GO/KEGG/Reactome]
+B -->|ranking stat| E[GSEA: GO/KEGG/Reactome]
+D --> F[Figuras y CSV (Results)]
 E --> F
+
 ```
 
 
