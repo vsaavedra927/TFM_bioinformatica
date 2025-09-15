@@ -235,7 +235,7 @@ Dentro de ambas carpetas encontramos:
 
 
 Los resultados de Souza son para un solo tejido (sangre periférica humana) y una sola comparación (aceite vs placebo).  
-Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel de ratón) y tres comparaciones (DHA vs control, EPA vs control, EPA vs DHA).  
+Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel) de ratón y tres comparaciones (DHA vs ctrl, EPA vs ctrl, EPA vs DHA).  
   
 
 ## Scripts
