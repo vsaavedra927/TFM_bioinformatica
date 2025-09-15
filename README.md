@@ -42,14 +42,14 @@ TFM_bioinformatica/
 ├─ Results/
 │  ├─ Results_GSE132648_Souza2019/
 │  │  ├─ resultados_genes_significativos__all.csv
-│  │  ├─ (*) <figuras_expresion_diferencial>.png
+│  │  ├─ (*) <figuras_deseq2>.png
 │  │  └─ Enriquecimiento_Funcional/
 │  │     └─ Souza_aceitevsplacebo/
 │  │        ├─ (*) <tablas_GSEA/ORA>.csv
 │  │        └─ (*) <figuras_GSEA/ORA>.png
 │  ├─ Results_GSE153648_Sorokin2023/
 │  │  ├─ (*) resultados_genes_significativos__<tejido>_<trat1vstrat2>.csv
-│  │  ├─ (*) <figuras_expresion_diferencial>.png
+│  │  ├─ (*) <figuras_deseq2>.png
 │  │  └─ Enriquecimiento_Funcional/
 │  │     └─ (*) subset_<tejido>_<trat1vstrat2>/
 │  │        ├─ (*) <tablas_GSEA/ORA>.csv
@@ -65,7 +65,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ```
 
 
-**(*) <figuras_expresion_diferencial>.png**  
+**(*) <figuras_deseq2>.png**  
 Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.  
 Dispersión del conjunto de datos:  plot de estimaciones de dispersión,  plot de media vs varianza.  
 Resultados de expresión diferencial:  mapa de calor de expresión,  plot de expresión de top N genes,  plot de expresión emparejado de top N genes,  volcano plot,  volcano plot con etiquetas de genes significativos.  
@@ -147,16 +147,43 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP)
 
 ## Flujo del análisis
 
-```mermaid
-graph TD
-A[Conteos crudos de GEO] --> B[DESeq2]
-B --> C[Genes diferencialmente expresados]
-C -->|UP/DOWN| D[ORA: GO/KEGG/Reactome]
-B -->|ranking stat| E[GSEA: GO/KEGG/Reactome]
-D --> F[Figuras y CSV (Results)]
-E --> F
-
 ```
+[Conteos crudos de GEO]
+[Metadatos de GEO]
+   | GESTION SUBSETS Y METADATOS
+   ↓ 
+[Datos y metadatos adaptados]
+   | ANÁLISIS DE EXPRESIÖN DIFERENCIAL con DESeq2
+   | (EXPLORACIÓN DE LOS DATOS)
+   ├─→ [Figuras correlación entre muestras] ─→ heatmap correlacion, PCA, PCA 3D
+   | (MODELAJE DE EXPRESIÓN DIFERENCIAL)
+   ├─→ [Figuras dispersión de datos] ─→ estimaciones de dispersión, media vs varianza
+   | (CÁLCULO DE RESULTADOS)
+   ↓ 
+A. [Métricas estadísticas para cada gen (baseMean, log2FC, lfcSE, stat Wald, pvalue, padj)]
+B. [Lista de genes significativos UP y DOWN]
+C. [Conteos normalizados]
+   |   | VISUALIZACIÓN DE RESULTADOS
+   .   ├─→ [Tabla de genes significativos con métricas estadísticas]
+   .   └─→ [Figuras: Resultados de expresión diferencial] ─→ heatmap, volcano plot, plot de expresión, plot de expresión emparejado
+   |
+   | ANÁLISIS DE ENRIQUECIMIENTO FUNCIONAL
+   A ─→ |ranking stat| ─→ [GSEA: GO/KEGG/Reactome]
+   B ─→ |UP/DOWN| ─→ [ORA: GO/KEGG/Reactome]
+```
+
+
+## Requisitos
+
+R (versión 4.4.2)
+BiocManager (3.20)
+Bioconductor (3.20)
+
+Paquetes Bioconductor: 
+DESeq2 (1.46.0), GEOquery (2.74.0), SummarizedExperiment (1.36.0), biomaRt (2.62.1), org.Mm.eg.db (3.20.0), org.Hs.eg.db (3.20.0), clusterProfiler (4.14.6), enrichplot (1.26.6), ReactomePA (1.50.0). 
+
+Paquetes CRAN: 
+pheatmap (1.0.12), ggplot2 (3.5.2), dplyr (1.1.4), tidyr (1.3.1), tibble (3.2.1), readr (2.1.5), stringr (1.5.1), ggrepel (0.9.6), patchwork (1.3.0), plotly (4.10.4), scales (1.3.0), ggraph (2.2.2) y ggridges (0.5.6). 
 
 
     
