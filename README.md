@@ -206,7 +206,7 @@ Contiene las figuras y tablas resultantes de los análisis de expresión diferen
 - Results_GSE153648_Sorokin2023: carpeta con todos los resultados sobre los datos de ratón.  
 - resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.    
      
-Dentro de ambas carpetas encontramos:  
+Dentro de ambas carpetas encontramos:
     -  Figuras de correlación entre muestras (.png) (demuestran homogeneidad de las muestras):  
         -  heatmap de correlacion,  
         -  PCA,  
