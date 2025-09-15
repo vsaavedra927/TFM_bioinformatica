@@ -66,8 +66,12 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 
 **(*) <figuras_expresion_diferencial>.png**
+Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.
+Dispersión del conjunto de datos:  plot de estimaciones de dispersión,  plot de media vs varianza.
+Resultados de expresión diferencial:  mapa de calor de expresión,  plot de expresión de top N genes,  plot de expresión emparejado de top N genes,  volcano plot,  volcano plot con etiquetas de genes significativos.
+
 <details>
-    <summary>(ver vista de árbol) </summary>
+    <summary>(ver detalle de figuras) </summary>
     
 ```
 ├─ correlation_heatmap_*.png
@@ -89,7 +93,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 GSEA para GO:BP, KEGG, Reactome;  
 ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
 <details>
-    <summary>(ver vista de árbol) </summary>
+    <summary>(ver detalle de tablas) </summary>
     
 ```
 ├─ GSEA_GO_BP_*.csv
@@ -110,7 +114,7 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
 GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
 ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP)
 <details>
-    <summary>(ver vista de árbol) </summary>
+    <summary>(ver detalle de figuras) </summary>
     
 ```
 ├─ GSEA_GO_BP_dotplot_*.png
