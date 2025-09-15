@@ -28,7 +28,7 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 | **README.md** | Este documento. |
 
 
-## Vista en árbol
+### Vista en árbol
 
 ```
 TFM_bioinformatica/
@@ -66,6 +66,9 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 
 **(*) <figuras_expresion_diferencial>.png**  
+<details>
+    <summary>(ver vista de árbol) </summary>
+    
 ```
 ├─ correlation_heatmap_*.png
 ├─ estimateddispersion_plot_*.png
@@ -80,12 +83,14 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 * distinto para cada subset (tejido y combinación de tratamientos)  
 ```
-
-
+</details>
 
 **(*) <tablas_GSEA/ORA>.csv**  
 GSEA para GO:BP, KEGG, Reactome;  
 ORA de genes DOWN y UP para GO:BP, KEGG, Reactome  
+<details>
+    <summary>(ver vista de árbol) </summary>
+    
 ```
 ├─ GSEA_GO_BP_*.csv
 ├─ GSEA_KEGG_*.csv
@@ -99,12 +104,14 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
 
 * distinto para cada subset (tejido y combinación de tratamientos)  
 ```
-
-
+</details>
 
 **(*) <figuras_GSEA/ORA>.png**  
 GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
 ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP)  
+<details>
+    <summary>(ver vista de árbol) </summary>
+    
 ```
 ├─ GSEA_GO_BP_dotplot_*.png
 ├─ GSEA_GO_BP_ridgeplot_*.png
@@ -128,6 +135,7 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP)
 
 * distinto para cada subset (tejido y combinación de tratamientos)
 ```
+</details>
 
 
 
@@ -146,6 +154,7 @@ E --> F
 ```
 
 
+    
 **Datasets**: Contiene los conteos crudos de RNA-seq sin editar, extraídos de GEO, que serán utilizados en los scripts; también los diseños experimentales.
 - GSE132648_Souza2019: voluntarios humanos sanos suplementados con aceite marino enriquecido en omega-3 o placebo; muestras de sangre periférica.
     - archivo .txt: conteos crudos de RNA-seq
