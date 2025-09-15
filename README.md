@@ -65,7 +65,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ```
 
 
-**(*) <figuras_expresion_diferencial>.png**  
+**(*) <figuras_expresion_diferencial>.png**
 <details>
     <summary>(ver vista de árbol) </summary>
     
@@ -87,7 +87,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 **(*) <tablas_GSEA/ORA>.csv**  
 GSEA para GO:BP, KEGG, Reactome;  
-ORA de genes DOWN y UP para GO:BP, KEGG, Reactome  
+ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
 <details>
     <summary>(ver vista de árbol) </summary>
     
@@ -108,7 +108,7 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
 
 **(*) <figuras_GSEA/ORA>.png**  
 GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
-ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP)  
+ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP)
 <details>
     <summary>(ver vista de árbol) </summary>
     
