@@ -148,7 +148,7 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP)
 ## Flujo del análisis
 
 ```mermaid
-graph LR
+graph TD
 A[Conteos crudos de GEO] --> B[DESeq2]
 B --> C[Genes diferencialmente expresados]
 C -->|UP/DOWN| D[ORA: GO/KEGG/Reactome]
