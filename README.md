@@ -51,6 +51,7 @@ TFM_bioinformatica/
 │  ├─ Results_GSE153648_Sorokin2023/
 │  │  ├─ (*) resultados_genes_significativos__<tejido>_<trat1vstrat2>.csv
 │  │  ├─ (*) <figuras_deseq2>.png
+│  │  ├─ venn_aorta_genessig.png
 │  │  └─ Enriquecimiento_Funcional/
 │  │     └─ (*) subset_<tejido>_<trat1vstrat2>/
 │  │        ├─ (*) <tablas_GSEA/ORA>.csv
@@ -202,27 +203,37 @@ Corresponden a los siguientes conjuntos de datos de GEO:
 ## Results 
 Salida (output) de los scripts.  
 Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.  
-- Results_GSE132648_Souza2019: carpeta con todos los resultados sobre los datos de humano.  
-- Results_GSE153648_Sorokin2023: carpeta con todos los resultados sobre los datos de ratón.  
+- Results_GSE132648_Souza2019/: carpeta con todos los resultados sobre los datos de humano.  
+- Results_GSE153648_Sorokin2023/: carpeta con todos los resultados sobre los datos de ratón.  
 - resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.    
      
-Dentro de ambas carpetas encontramos:
--  Figuras de correlación entre muestras (.png) (demuestran homogeneidad de las muestras):  
-    -  heatmap de correlacion,  
-    -  PCA,
-    -  PCA 3D.   
--  Figuras de dispersión de datos (.png) (demuestran aptitud del modelo estadístico):  
-    -  estimaciones de dispersión,
-    -  media vs varianza.    
--  Figuras de resultados de expresión diferencial (.png):  
-    -  mapa de calor de expresión,  
-    -  plot de expresión de top N genes,  
-    -  plot de expresión emparejado de top N genes,  
-    -  volcano plot,  
-    -  volcano plot con etiquetas de genes significativos.    
--  Tabla de genes significativos con métricas estadísticas (.csv)
--  Carpeta "Enriquecimiento_Funcional": resultados de enriquecimiento (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)   
-    
+Dentro de ambas carpetas encontramos:  
+-  Figuras de correlación entre muestras (`.png`) (demuestran homogeneidad de las muestras):  
+    -  heatmap de correlacion: `correlation_heatmap_*.png`   
+    -  PCA: `pca_plot_*.png`  
+    -  PCA 3D: `pca3D_plot_*.png`  
+-  Figuras de dispersión de datos (`.png`) (demuestran aptitud del modelo estadístico):  
+    -  estimaciones de dispersión: `estimateddispersion_plot_*.png`  
+    -  media vs varianza: `meanvar_plot_*.png`  
+-  Figuras de resultados de expresión diferencial (`.png`):  
+    -  mapa de calor de expresión: `expression_heatmap_*.png`  
+    -  plot de expresión de top N genes: `expression_plot_*_<topNgenes>.png`   
+    -  plot de expresión emparejado de top N genes: `expression_plot_emparejado_*.png`   
+    -  volcano plot: `volcano_plot_*.png`  
+    -  volcano plot con etiquetas de genes significativos: `volcano_plot_labels_*.png`  
+-  Tabla de genes significativos con métricas estadísticas: `resultados_genes_significativos__*.csv`  
+-  Carpeta `Enriquecimiento_Funcional/`: resultados de enriquecimiento (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)   
+    -  Figuras(`.png`) de Gene Set Enrichment Analysis (GSEA) para GO:BP, KEGG, Reactome; para cada base de datos se incluyen dotplot, ridgeplot y gseaplot2 de top N términos:  
+        - `GSEA_<GO_BP/KEGG/Reactome>_dotplot_*.png`  
+        - `GSEA_<GO_BP/KEGG/Reactome>_ridgeplot_*.png`  
+        - `GSEA_<GO_BP/KEGG/Reactome>_*_gseaplot2_TOP<#>_<termino>.png`  
+    -  Figuras (`.png`) de Over-Representation Analysis (ORA) de genes UP y DOWN para GO:BP, KEGG, Reactome; para cada base de datos se incluyen dotplot; para GO:BP además cnetplot y emapplot:  
+        - `ORA_<GO_BP/KEGG/Reactome>_<UP/DOWN>_dotplot_*.png`  
+        - `ORA_GO_BP_<UP/DOWN>_cnetplot_*.png`  
+        - `ORA_GO_BP_<UP/DOWN>_emapplot_*.png`  
+
+
+
 Los resultados de Souza son para un solo tejido (sangre periférica humana) y una sola comparación (aceite vs placebo).  
 Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel de ratón) y tres comparaciones (DHA vs control, EPA vs control, EPA vs DHA).  
   
