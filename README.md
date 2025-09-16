@@ -18,7 +18,7 @@ El flujo en R reproduce: preparaci처n de datos y metadatos, DESeq2 para expresi�
 - [Datasets](#datasets)
 - [Results](#results)
 - [Scripts](#scripts)
-- [Citaci처n y licencia](#citaci처n-y-licencia)
+- [Citaci처n y licencia](#citaci처n)
 
 
 
@@ -281,7 +281,7 @@ Estos scripts usan como entrada (input) los archivos de la carpeta Datasets y ge
 
 ---
 
-## Citaci처n y licencia
+## Citaci처n
 
 Si usas este repositorio, por favor cita:  
   
