@@ -18,7 +18,7 @@ El flujo en R reproduce: preparaci처n de datos y metadatos, DESeq2 para expresi�
 - [Datasets](#datasets)
 - [Results](#results)
 - [Scripts](#scripts)
-- [Citaci처n y licencia](#citaci처n)
+- [Citaci처n](#citaci처n)
 
 
 
