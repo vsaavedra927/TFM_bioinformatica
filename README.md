@@ -10,7 +10,7 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 ## Índice
 - [Estructura del repositorio](#estructura-del-repositorio)
 - [Requisitos](#requisitos)
-- [Flujo del análisis](#flujo-del-analisis)
+- [Flujo del análisis](#flujo-del-análisis)
 - [Uso rápido](#uso-rápido)
 - [Datasets](#datasets)
 - [Results](#results)
@@ -72,7 +72,6 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 -Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.  
 -Dispersión del conjunto de datos:  plot de estimaciones de dispersión,  plot de media vs varianza.  
 -Resultados de expresión diferencial:  mapa de calor de expresión,  plot de expresión de top N genes,  plot de expresión emparejado de top N genes,  volcano plot,  volcano plot con etiquetas de genes significativos.  
-
 <details>
     <summary>(ver detalle de figuras) </summary>
     
@@ -90,7 +89,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 * distinto para cada subset (tejido y combinación de tratamientos)  
 ```
-</details>
+</details><br>
 
 **(*) <tablas_GSEA/ORA>.csv**  
 -GSEA para GO:BP, KEGG, Reactome;  
@@ -111,7 +110,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 * distinto para cada subset (tejido y combinación de tratamientos)  
 ```
-</details>
+</details><br>
 
 **(*) <figuras_GSEA/ORA>.png**  
 -GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
@@ -142,7 +141,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 
 * distinto para cada subset (tejido y combinación de tratamientos)
 ```
-</details>
+</details><br>
 
 
 ---
@@ -164,7 +163,7 @@ pheatmap (1.0.12), ggplot2 (3.5.2), dplyr (1.1.4), tidyr (1.3.1), tibble (3.2.1)
 ---
 
 ## Flujo del análisis
-<a id="flujo-del-analisis"></a>
+
 
 ```
 [Conteos crudos de GEO]
@@ -181,8 +180,8 @@ A. [Métricas estadísticas para cada gen (baseMean, log2FC, lfcSE, stat Wald, p
 B. [Lista de genes significativos UP y DOWN]
 C. [Conteos normalizados]
    |   | VISUALIZACIÓN DE RESULTADOS
-   .   ├─→ [Tabla: Genes significativos con métricas estadísticas]
-   .   └─→ [Figuras: Resultados de expr. diferencial] ─→ heatmap, volcano plot, plot de expresión, plot de expresión emparejado
+   |   ├─→ [Tabla: Genes significativos con métricas estadísticas]
+   |   └─→ [Figuras: Resultados de expr. diferencial] ─→ heatmap, volcano plot, plot de expresión, plot de expresión emparejado
    | ANÁLISIS DE ENRIQUECIMIENTO FUNCIONAL
    A ─→ |ranking stat| ─→ [Figuras y tablas GSEA: GO/KEGG/Reactome]
    B ─→ |UP/DOWN| ─→ [Figuras y tablas ORA: GO/KEGG/Reactome]
@@ -196,26 +195,26 @@ C. [Conteos normalizados]
    git clone https://github.com/vsaavedra927/TFM_bioinformatica.git
    cd TFM_bioinformatica
    
-2. Instalar paquetes (ver sección [Requisitos](#requisitos)):
-(Opcional: los paquetes se instalan automáticamente al ejecutar el pipeline de funciones en el paso 5.)
+2. Instalar paquetes (ver sección [Requisitos](#requisitos)).  
+Nota: Este paso es opcional: los paquetes se instalan automáticamente al ejecutar el pipeline de funciones en el paso 5.  
 Desde R:
     ```r
     source("Scripts/RNAseq_funciones.R"); load_pkgs() 
   
 4. Colocar los datasets en `Datasets/` (ya incluidos).  
   
-5. Ejecutar los pipelines de la carpeta `Scripts/`:
-Desde R
+5. Ejecutar los pipelines de la carpeta `Scripts/`.  
+Desde R:
     ```r
     source("Scripts/RNAseq_funciones.R")
     source("Scripts/RNAseq_GSE132648_Souza2019.R")
     source("Scripts/RNAseq_GSE153648_Sorokin2023.R")
-Los resultados se guardan en `Results/*` (figuras y CSV).  
+  Los resultados se guardan en `Results/*` (figuras y CSV).  
   
-6. Variables y parámetros útiles para configurar:
-Ruta de carpeta Github: `path_carpetaGithub`
-Umbrales FDR y |log2FC|: `umbral_fdr`, `umbral_lfc`
-Enriquecimiento: `gsea_min_size`, `gsea_max_size`, `top_n_gsea_terms`
+6. Variables y parámetros útiles para configurar:  
+Ruta de carpeta Github: `path_carpetaGithub`  
+Umbrales FDR y |log2FC|: `umbral_fdr`, `umbral_lfc`  
+Nota: Las funciones incluyen numerosos parámetros para analizar con distintos tests estadísticos y para generar figuras de distintos formatos. Para más información, consultar los comentarios de los scripts y la documentación de las librerías.  
 
 
 ---
@@ -233,12 +232,12 @@ Corresponden a los siguientes conjuntos de datos de GEO:
 
 ## Results 
 Salida (output) de los scripts.  
-Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.  
+Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.
 - Results_GSE132648_Souza2019/: carpeta con todos los resultados sobre los datos de humano.  
 - Results_GSE153648_Sorokin2023/: carpeta con todos los resultados sobre los datos de ratón.  
 - resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.    
      
-Nomenclatura de archivos:  
+Nomenclatura de archivos:
 -  Figuras de correlación entre muestras (`.png`) (demuestran homogeneidad de las muestras):  
     -  heatmap de correlacion: `correlation_heatmap_*.png`   
     -  PCA: `pca_plot_*.png`  
@@ -282,16 +281,16 @@ Estos scripts usan como entrada (input) los archivos de la carpeta Datasets y ge
 ## Citación y licencia
 
 Si usas este repositorio, por favor cita:  
-
-- **Este repositorio**  
+  
+**Este repositorio**  
   Saavedra Yturriagagoitia, V. (2025). *TFM_bioinformatica* (v1.0). GitHub.  
   Disponible en: https://github.com/vsaavedra927/TFM_bioinformatica
-
-- **Conjuntos de datos de GEO**  
+  
+**Conjuntos de datos de GEO**  
 - NCBI Gene Expression Omnibus (GEO). GSE132648 — Enriched marine oil supplements increase peripheral blood SPM concentrations and reprogram host immune responses: A randomized double-blind placebo-controlled study. 2019 (actualizado 2020-03-13). Disponible en: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132648. Accedido el: 10-06-2025.  
 - NCBI Gene Expression Omnibus (GEO). GSE153648 — Comparison of the dietary omega-3 fatty acids impact on murine psoriasis-like skin inflammation and associated lipid dysfunction. Público el 13-abr-2023. Disponible en: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153648. Accedido el: 20-07-2025.  
-
+  
 **Artículos de los autores**  
-  - Souza PR, Marques RM, Gomez EA, Colas RA, De Matteis R, Zak A, et al. Enriched Marine Oil Supplements Increase Peripheral Blood Specialized Pro-Resolving Mediators Concentrations and Reprogram Host Immune Responses: A Randomized Double-Blind Placebo-Controlled Study. Circ Res [Internet]. 2020 Jan 3 [cited 2025 May 16];126(1):75–90. Available from: /doi/pdf/10.1161/CIRCRESAHA.119.315506  
-- Sorokin A V., Arnardottir H, Svirydava M, Ng Q, Baumer Y, Berg A, et al. Comparison of  the dietary omega-3 fatty acids impact on murine psoriasis-like skin inflammation and associated lipid dysfunction. Journal of Nutritional Biochemistry [Internet]. 2023 Jul 1 [cited 2025 Jul 23];117. Available from: https://pubmed.ncbi.nlm.nih.gov/37044136/  
+  - Souza PR, Marques RM, Gomez EA, Colas RA, De Matteis R, Zak A, et al. Enriched Marine Oil Supplements Increase Peripheral Blood Specialized Pro-Resolving Mediators Concentrations and Reprogram Host Immune Responses: A Randomized Double-Blind Placebo-Controlled Study. Circ Res [Internet]. 2020 Jan 3 [cited 2025 May 16];126(1):75–90. Available from: [/doi/pdf/10.1161/CIRCRESAHA.119.315506](https://pubmed.ncbi.nlm.nih.gov/31829100/)
+- Sorokin A V., Arnardottir H, Svirydava M, Ng Q, Baumer Y, Berg A, et al. Comparison of  the dietary omega-3 fatty acids impact on murine psoriasis-like skin inflammation and associated lipid dysfunction. Journal of Nutritional Biochemistry [Internet]. 2023 Jul 1 [cited 2025 Jul 23];117. Available from: [https://pubmed.ncbi.nlm.nih.gov/37044136/  ](https://pubmed.ncbi.nlm.nih.gov/37044136/)
 
