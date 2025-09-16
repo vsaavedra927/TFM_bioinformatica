@@ -1,7 +1,8 @@
 # TFM_bioinformatica
-Trabajo Fin de Máster del Máster en Bioinformática, Universidad Internacional de la Rioja (UNIR)
-Autor: Víctor Saavedra Yturriagagoitia
-Fecha: Septiembre 2025
+Trabajo Fin de Máster, Máster en Bioinformática  
+Universidad Internacional de la Rioja (UNIR)  
+Autor: Víctor Saavedra Yturriagagoitia  
+Fecha: Septiembre 2025  
 
 Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omnibus (GEO), scripts en R para análisis de expresión diferencial (DESeq2) y enriquecimiento funcional (GO/KEGG/Reactome), y los resultados generados.
 
