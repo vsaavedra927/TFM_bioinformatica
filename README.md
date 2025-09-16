@@ -64,10 +64,9 @@ TFM_bioinformatica/
 │  ├─ RNAseq_GSE153648_Sorokin2023.R
 │  └─ RNAseq_funciones.R
 └─ README.md
-
 ```
 
-Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
+Nota: las ramas con (*) indican multiplicidad de archivos o carpetas:
 
 <br>  
 
@@ -145,7 +144,6 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 * distinto para cada subset (tejido y combinación de tratamientos)
 ```
 </details><br>
-
 
 ---
 
