@@ -69,7 +69,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.
 ```
 
 <br>  
-**(*) <figuras_deseq2>.png**  
+**(*) \<figuras_deseq2\>.png**  
 -Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.  
 -Dispersión del conjunto de datos:  plot de estimaciones de dispersión,  plot de media vs varianza.  
 -Resultados de expresión diferencial:  mapa de calor de expresión,  plot de expresión de top N genes,  plot de expresión emparejado de top N genes,  volcano plot,  volcano plot con etiquetas de genes significativos.  
