@@ -13,7 +13,7 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 - [Flujo del análisis](#flujo-del-analisis)
 - [Uso rápido](#uso-rápido)
 - [Datasets](#datasets)
-- [Resultados](#results)
+- [Results](#results)
 - [Scripts](#scripts)
 - [Citación y licencia](#citación-y-licencia)
 
@@ -30,6 +30,8 @@ Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omni
 
 
 ### Vista en árbol
+
+La nomenclatura de las figuras se detalla en la sección [Results](#results).
 
 ```
 TFM_bioinformatica/
@@ -66,11 +68,10 @@ TFM_bioinformatica/
 Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
 ```
 
-
 **(*) <figuras_deseq2>.png**  
-Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.  
-Dispersión del conjunto de datos:  plot de estimaciones de dispersión,  plot de media vs varianza.  
-Resultados de expresión diferencial:  mapa de calor de expresión,  plot de expresión de top N genes,  plot de expresión emparejado de top N genes,  volcano plot,  volcano plot con etiquetas de genes significativos.  
+-Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.  
+-Dispersión del conjunto de datos:  plot de estimaciones de dispersión,  plot de media vs varianza.  
+-Resultados de expresión diferencial:  mapa de calor de expresión,  plot de expresión de top N genes,  plot de expresión emparejado de top N genes,  volcano plot,  volcano plot con etiquetas de genes significativos.  
 
 <details>
     <summary>(ver detalle de figuras) </summary>
@@ -92,8 +93,8 @@ Resultados de expresión diferencial:  mapa de calor de expresión,  plot de exp
 </details>
 
 **(*) <tablas_GSEA/ORA>.csv**  
-GSEA para GO:BP, KEGG, Reactome;  
-ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
+-GSEA para GO:BP, KEGG, Reactome;  
+-ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
 <details>
     <summary>(ver detalle de tablas) </summary>
     
@@ -113,8 +114,8 @@ ORA de genes DOWN y UP para GO:BP, KEGG, Reactome
 </details>
 
 **(*) <figuras_GSEA/ORA>.png**  
-GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
-ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP)
+-GSEA para GO:BP, KEGG, Reactome: dotplot, ridgeplot, gseaplot2 de N top términos;   
+-ORA de genes DOWN y UP para GO:BP, KEGG, Reactome: dotplot, cnetplot(solo GO:BP), emapplot (solo GO:BP)
 <details>
     <summary>(ver detalle de figuras) </summary>
     
@@ -163,28 +164,58 @@ pheatmap (1.0.12), ggplot2 (3.5.2), dplyr (1.1.4), tidyr (1.3.1), tibble (3.2.1)
 ---
 
 ## Flujo del análisis
+<a id="flujo-del-analisis"></a>
 
 ```
 [Conteos crudos de GEO]
 [Metadatos de GEO]
    ↓ GESTION SUBSETS Y METADATOS
 [Datos y metadatos adaptados]
-   | ANÁLISIS DE EXPRESIÖN DIFERENCIAL con DESeq2
+   | ANÁLISIS DE EXPRESIÓN DIFERENCIAL con DESeq2
    | (EXPLORACIÓN DE LOS DATOS)
-   ├─→ [Figuras correlación entre muestras] ─→ heatmap correlacion, PCA, PCA 3D
+   ├─→ [Figuras: Correlación entre muestras] ─→ heatmap correlacion, PCA, PCA 3D
    | (MODELAJE DE EXPRESIÓN DIFERENCIAL)
-   ├─→ [Figuras dispersión de datos] ─→ estimaciones de dispersión, media vs varianza
+   ├─→ [Figuras: Dispersión de datos] ─→ estimaciones de dispersión, media vs varianza
    ↓ (CÁLCULO DE RESULTADOS)
 A. [Métricas estadísticas para cada gen (baseMean, log2FC, lfcSE, stat Wald, pvalue, padj)]
 B. [Lista de genes significativos UP y DOWN]
 C. [Conteos normalizados]
    |   | VISUALIZACIÓN DE RESULTADOS
-   .   ├─→ [Tabla de genes significativos con métricas estadísticas]
-   .   └─→ [Figuras: Resultados de expresión diferencial] ─→ heatmap, volcano plot, plot de expresión, plot de expresión emparejado
+   .   ├─→ [Tabla: Genes significativos con métricas estadísticas]
+   .   └─→ [Figuras: Resultados de expr. diferencial] ─→ heatmap, volcano plot, plot de expresión, plot de expresión emparejado
    | ANÁLISIS DE ENRIQUECIMIENTO FUNCIONAL
-   A ─→ |ranking stat| ─→ [GSEA: GO/KEGG/Reactome]
-   B ─→ |UP/DOWN| ─→ [ORA: GO/KEGG/Reactome]
+   A ─→ |ranking stat| ─→ [Figuras y tablas GSEA: GO/KEGG/Reactome]
+   B ─→ |UP/DOWN| ─→ [Figuras y tablas ORA: GO/KEGG/Reactome]
 ```
+
+---
+## Uso rápido
+
+1. Clonar el repositorio:  
+   ```bash
+   git clone https://github.com/vsaavedra927/TFM_bioinformatica.git
+   cd TFM_bioinformatica
+   
+2. Instalar paquetes (ver sección [Requisitos](#requisitos)):
+(Opcional: los paquetes se instalan automáticamente al ejecutar el pipeline de funciones en el paso 5.)
+Desde R:
+    ```r
+    source("Scripts/RNAseq_funciones.R"); load_pkgs() 
+  
+4. Colocar los datasets en `Datasets/` (ya incluidos).  
+  
+5. Ejecutar los pipelines de la carpeta `Scripts/`:
+Desde R
+    ```r
+    source("Scripts/RNAseq_funciones.R")
+    source("Scripts/RNAseq_GSE132648_Souza2019.R")
+    source("Scripts/RNAseq_GSE153648_Sorokin2023.R")
+Los resultados se guardan en `Results/*` (figuras y CSV).  
+  
+6. Variables y parámetros útiles para configurar:
+Ruta de carpeta Github: `path_carpetaGithub`
+Umbrales FDR y |log2FC|: `umbral_fdr`, `umbral_lfc`
+Enriquecimiento: `gsea_min_size`, `gsea_max_size`, `top_n_gsea_terms`
 
 
 ---
@@ -207,7 +238,7 @@ Contiene las figuras y tablas resultantes de los análisis de expresión diferen
 - Results_GSE153648_Sorokin2023/: carpeta con todos los resultados sobre los datos de ratón.  
 - resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.    
      
-Dentro de ambas carpetas encontramos:  
+Nomenclatura de archivos:  
 -  Figuras de correlación entre muestras (`.png`) (demuestran homogeneidad de las muestras):  
     -  heatmap de correlacion: `correlation_heatmap_*.png`   
     -  PCA: `pca_plot_*.png`  
@@ -216,11 +247,11 @@ Dentro de ambas carpetas encontramos:
     -  estimaciones de dispersión: `estimateddispersion_plot_*.png`  
     -  media vs varianza: `meanvar_plot_*.png`  
 -  Figuras de resultados de expresión diferencial (`.png`):  
-    -  mapa de calor de expresión: `expression_heatmap_*.png`  
+    -  mapa de calor de expresión: `expression_heatmap_*.png`. En alta resolución con sufijo `_highres.png`.
     -  plot de expresión de top N genes: `expression_plot_*_<topNgenes>.png`   
     -  plot de expresión emparejado de top N genes: `expression_plot_emparejado_*.png`   
     -  volcano plot: `volcano_plot_*.png`  
-    -  volcano plot con etiquetas de genes significativos: `volcano_plot_labels_*.png`  
+    -  volcano plot con etiquetas de genes significativos: `volcano_plot_labels_*.png`
 -  Tabla de genes significativos con métricas estadísticas: `resultados_genes_significativos__*.csv`  
 -  Carpeta `Enriquecimiento_Funcional/`: resultados de enriquecimiento (figuras y tablas; GSEA y ORA para GO:BP, KEGG, Reactome)   
     -  Figuras(`.png`) de Gene Set Enrichment Analysis (GSEA) para GO:BP, KEGG, Reactome; para cada base de datos se incluyen dotplot, ridgeplot y gseaplot2 de top N términos:  
@@ -232,31 +263,35 @@ Dentro de ambas carpetas encontramos:
         - `ORA_GO_BP_<UP/DOWN>_cnetplot_*.png`  
         - `ORA_GO_BP_<UP/DOWN>_emapplot_*.png`  
 
+**Nota:** los `*` en la lista de nombres de archivo indica multiplicidad de tejidos y comparaciones:  
+Los resultados de Souza son para un solo tejido (sangre periférica de humano) y una sola comparación (aceite vs placebo).  
+Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel de ratón) y tres comparaciones (DHA vs ctrl, EPA vs ctrl, EPA vs DHA).  
 
-
-Los resultados de Souza son para un solo tejido (sangre periférica humana) y una sola comparación (aceite vs placebo).  
-Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel) de ratón y tres comparaciones (DHA vs ctrl, EPA vs ctrl, EPA vs DHA).  
-**Nota:** los `*` en la lista de nombres de archivo indica esta multiplicidad de tejidos y comparaciones.  
 
 
 ## Scripts
 Scripts de R.  
 Estos scripts usan como entrada (input) los archivos de la carpeta Datasets y generan como salida (output) los archivos de la carpeta Results.  
-- RNAseq_funciones.R : script con las funciones a utilizar.
-- RNAseq_GSE132648_Souza2019.R : script para analizar datos de Souza et al. (humano).
-- RNAseq_GSE153648_Sorokin2023.R : script para analizar datos de Sorokin et al. (ratón).
+- RNAseq_funciones.R : script con las funciones a utilizar.  
+- RNAseq_GSE132648_Souza2019.R : script para analizar datos de Souza et al. (humano).  
+- RNAseq_GSE153648_Sorokin2023.R : script para analizar datos de Sorokin et al. (ratón).  
 
 
-flowchart LR
-[Datasets RNA-seq] --> [DESeq2] --> [Results] --> [Enriquecimiento]
+---
 
+## Citación y licencia
 
-flowchart LR
-Counts[Conteos (GEO)] --> DESeq2
-DESeq2 --> DEG[Genes DE]
-DEG -->|UP/DOWN| ORA[ORA GO/KEGG/Reactome]
-DESeq2 -->|ranking 'stat'| GSEA[GSEA GO/KEGG/Reactome]
-GSEA --> Fig[Figuras y CSV]
-ORA  --> Fig
+Si usas este repositorio, por favor cita:  
 
+- **Este repositorio**  
+  Saavedra Yturriagagoitia, V. (2025). *TFM_bioinformatica* (v1.0). GitHub.  
+  Disponible en: https://github.com/vsaavedra927/TFM_bioinformatica
+
+- **Conjuntos de datos de GEO**  
+- NCBI Gene Expression Omnibus (GEO). GSE132648 — Enriched marine oil supplements increase peripheral blood SPM concentrations and reprogram host immune responses: A randomized double-blind placebo-controlled study. 2019 (actualizado 2020-03-13). Disponible en: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132648. Accedido el: 10-06-2025.  
+- NCBI Gene Expression Omnibus (GEO). GSE153648 — Comparison of the dietary omega-3 fatty acids impact on murine psoriasis-like skin inflammation and associated lipid dysfunction. Público el 13-abr-2023. Disponible en: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153648. Accedido el: 20-07-2025.  
+
+**Artículos de los autores**  
+  - Souza PR, Marques RM, Gomez EA, Colas RA, De Matteis R, Zak A, et al. Enriched Marine Oil Supplements Increase Peripheral Blood Specialized Pro-Resolving Mediators Concentrations and Reprogram Host Immune Responses: A Randomized Double-Blind Placebo-Controlled Study. Circ Res [Internet]. 2020 Jan 3 [cited 2025 May 16];126(1):75–90. Available from: /doi/pdf/10.1161/CIRCRESAHA.119.315506  
+- Sorokin A V., Arnardottir H, Svirydava M, Ng Q, Baumer Y, Berg A, et al. Comparison of  the dietary omega-3 fatty acids impact on murine psoriasis-like skin inflammation and associated lipid dysfunction. Journal of Nutritional Biochemistry [Internet]. 2023 Jul 1 [cited 2025 Jul 23];117. Available from: https://pubmed.ncbi.nlm.nih.gov/37044136/  
 
