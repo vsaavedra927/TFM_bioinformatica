@@ -65,9 +65,9 @@ TFM_bioinformatica/
 │  └─ RNAseq_funciones.R
 └─ README.md
 
-Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
 ```
-
+Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
+<br>
 **(*) <figuras_deseq2>.png**  
 -Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.  
 -Dispersión del conjunto de datos:  plot de estimaciones de dispersión,  plot de media vs varianza.  
@@ -203,13 +203,12 @@ Desde R:
   
 4. Colocar los datasets en `Datasets/` (ya incluidos).  
   
-5. Ejecutar los pipelines de la carpeta `Scripts/`.  
+5. Ejecutar los pipelines de la carpeta `Scripts/`. Los resultados se guardan automáticamente en `Results/*` (figuras y CSV).  
 Desde R:
     ```r
     source("Scripts/RNAseq_funciones.R")
     source("Scripts/RNAseq_GSE132648_Souza2019.R")
     source("Scripts/RNAseq_GSE153648_Sorokin2023.R")
-  Los resultados se guardan en `Results/*` (figuras y CSV).  
   
 6. Variables y parámetros útiles para configurar:  
 Ruta de carpeta Github: `path_carpetaGithub`  
@@ -233,11 +232,11 @@ Corresponden a los siguientes conjuntos de datos de GEO:
 ## Results 
 Salida (output) de los scripts.  
 Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.
-- Results_GSE132648_Souza2019/: carpeta con todos los resultados sobre los datos de humano.  
-- Results_GSE153648_Sorokin2023/: carpeta con todos los resultados sobre los datos de ratón.  
-- resultados_genes_significativos_SorokinSouza.xlsx : archivo Excel recopilatorio con todos los genes significativos del estudio.    
+- `Results_GSE132648_Souza2019/`: carpeta con todos los resultados sobre los datos de humano.  
+- `Results_GSE153648_Sorokin2023/`: carpeta con todos los resultados sobre los datos de ratón.  
+- `resultados_genes_significativos_SorokinSouza.xlsx`: archivo Excel recopilatorio con todos los genes significativos del estudio.    
      
-Nomenclatura de archivos:
+Nomenclatura de archivos de resultados:
 -  Figuras de correlación entre muestras (`.png`) (demuestran homogeneidad de las muestras):  
     -  heatmap de correlacion: `correlation_heatmap_*.png`   
     -  PCA: `pca_plot_*.png`  
