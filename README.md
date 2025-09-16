@@ -65,8 +65,9 @@ TFM_bioinformatica/
 │  └─ RNAseq_funciones.R
 └─ README.md
 
-Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
 ```
+
+Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
 
 <br>  
 
