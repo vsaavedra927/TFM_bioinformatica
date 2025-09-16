@@ -271,9 +271,9 @@ Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel de ratón
 ## Scripts
 Scripts de R.  
 Estos scripts usan como entrada (input) los archivos de la carpeta Datasets y generan como salida (output) los archivos de la carpeta Results.  
-- RNAseq_funciones.R : script con las funciones a utilizar.  
-- RNAseq_GSE132648_Souza2019.R : script para analizar datos de Souza et al. (humano).  
-- RNAseq_GSE153648_Sorokin2023.R : script para analizar datos de Sorokin et al. (ratón).  
+- `RNAseq_funciones.R`: script con las funciones a utilizar.  
+- `RNAseq_GSE132648_Souza2019.R`: script para analizar datos de Souza et al. (humano).  
+- `RNAseq_GSE153648_Sorokin2023.R`: script para analizar datos de Sorokin et al. (ratón).  
 
 
 ---
