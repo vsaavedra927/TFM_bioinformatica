@@ -4,8 +4,10 @@ Universidad Internacional de la Rioja (UNIR)
 Autor: Víctor Saavedra Yturriagagoitia  
 Fecha: Septiembre 2025  
 
-Este repositorio contiene conjuntos de RNA-seq obtenidos de Gene Expression Omnibus (GEO), scripts en R para análisis de expresión diferencial (DESeq2) y enriquecimiento funcional (GO/KEGG/Reactome), y los resultados generados.
 
+Este repositorio acompaña el Trabajo de Fin de Máster **“Análisis transcriptómico y caracterización funcional de biomarcadores inflamatorios en respuesta a la suplementación con ácidos grasos omega-3”**. Reúne el código en R (funciones y pipelines), los datasets de RNA-seq descargados de GEO (**GSE132648** humano; **GSE153648** ratón) y todas las figuras y tablas generadas.  
+  
+El flujo en R reproduce: preparación de datos y metadatos, DESeq2 para expresión diferencial, visualización (correlación, PCA, volcano, heatmaps, plots de expresión) y enriquecimiento funcional (GO/KEGG/Reactome) con clusterProfiler, ReactomePA y enrichplot.  
 
 
 ## Índice
