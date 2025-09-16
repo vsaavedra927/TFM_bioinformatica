@@ -65,9 +65,9 @@ TFM_bioinformatica/
 │  └─ RNAseq_funciones.R
 └─ README.md
 
-```
 Nota: las ramas con (*) indican multiplicidad de archivos o carpetas.  
-  
+```
+
 <br>
 **(*) <figuras_deseq2>.png**  
 -Correlación entre muestras:  mapa de calor de correlación,  PCA plot,  PCA 3D plot.  
