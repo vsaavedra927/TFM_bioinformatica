@@ -5,7 +5,7 @@ Autor: Víctor Saavedra Yturriagagoitia
 Fecha: Septiembre 2025  
 
 
-Este repositorio acompaña el Trabajo de Fin de Máster **“Análisis transcriptómico y caracterización funcional de biomarcadores inflamatorios en respuesta a la suplementación con ácidos grasos omega-3”**. Reúne el código en R (funciones y pipelines), los datasets de RNA-seq descargados de GEO (**GSE132648** humano; **GSE153648** ratón) y todas las figuras y tablas generadas.  
+Este repositorio acompaña el Trabajo de Fin de Máster *“Análisis transcriptómico y caracterización funcional de biomarcadores inflamatorios en respuesta a la suplementación con ácidos grasos omega-3”*. Reúne el código en R (funciones y pipelines), los datasets de RNA-seq descargados de GEO ([GSE132648](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132648) para humano; [GSE153648](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153648) para ratón) y todas las figuras y tablas generadas.  
   
 El flujo en R reproduce: preparación de datos y metadatos, DESeq2 para expresión diferencial, visualización (correlación, PCA, volcano, heatmaps, plots de expresión) y enriquecimiento funcional (GO/KEGG/Reactome) con clusterProfiler, ReactomePA y enrichplot.  
 
@@ -288,10 +288,10 @@ Contenido de la carpeta `Scripts/`:
 Cada *subset* (uno por tejido y comparación) se implementa como una lista de R, que incluye los datos de entrada (conteos y metadatos), información relevante sobre ese *subset*, y todos los objetos generados durante el análisis. Las funciones reciben un `subset_obj` (la lista correspondiente a un *subset*), trabajan sobre él y devuelven el mismo `subset_obj` actualizado (incluyendo nuevos elementos). De este modo, el estado queda encapsulado y se asegura la reproducibilildad del flujo de trabajo para los distintos *subsets*.  
 
 Campos típicos de un `subset_obj` (lista no exhaustiva):  
-Información base: `nombre_subset`, `gse_nr`, `especie`, `tejido`, `tratamiento`, `muestras`, `metadata_df`, `count_matrix`.  
-Preprocesado/Exploración: `dds`, `count_matrix_norm`, `vsd`, `vsd_mat`, `vsd_cor`, `meanvar_df`, `pca_plot`.  
-Análisis de expresión diferencial: `results` / `results_lfcshrink`, `results_df`, `results_df_sig`, `count_matrix_norm_sig`.  
-Figuras: `volcano_plot`, `exp_plot`, `exp_plot_emparejado`.  
+-Información base: `nombre_subset`, `gse_nr`, `especie`, `tejido`, `tratamiento`, `muestras`, `metadata_df`, `count_matrix`.  
+-Preprocesado/Exploración: `dds`, `count_matrix_norm`, `vsd`, `vsd_mat`, `vsd_cor`, `meanvar_df`, `pca_plot`.  
+-Análisis de expresión diferencial: `results` / `results_lfcshrink`, `results_df`, `results_df_sig`, `count_matrix_norm_sig`.  
+-Figuras: `volcano_plot`, `exp_plot`, `exp_plot_emparejado`.  
 
 Patrón de uso (ejemplo):  
   ```r
