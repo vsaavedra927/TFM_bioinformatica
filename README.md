@@ -287,13 +287,13 @@ Contenido de la carpeta `Scripts/`:
 
 Cada subset (uno por tejido y comparación) se implementa como una lista de R, que incluye los datos de entrada (conteos y metadatos), información relevante sobre ese subset, y todos los objetos generados durante el análisis. Las funciones reciben un `subset_obj` (la lista correspondiente a un subset), trabajan sobre él y devuelven el mismo `subset_obj` actualizado (incluyendo nuevos elementos). De este modo, el estado queda encapsulado y se asegura la reproducibilildad del flujo de trabajo para los distintos subsets.  
 
-Campos típicos de un `subset_obj` (lista no ):  
+Campos típicos de un `subset_obj` (lista no exhaustiva):  
 Información base: `nombre_subset`, `gse_nr`, `especie`, `tejido`, `tratamiento`, `muestras`, `metadata_df`, `count_matrix`.  
 Preprocesado/Exploración: `dds`, `count_matrix_norm`, `vsd`, `vsd_mat`, `vsd_cor`, `meanvar_df`, `pca_plot`.  
 Análisis de expresión diferencial: `results` / `results_lfcshrink`, `results_df`, `results_df_sig`, `count_matrix_norm_sig`.  
 Figuras: `volcano_plot`, `exp_plot`, `exp_plot_emparejado`.  
 
-Patrón de uso (encadenado):  
+Patrón de uso (ejemplo):  
   ```r
   subset_obj <- crear_DESeqDataSet(subset_obj, variable_diseno = "tratamiento")
   subset_obj <- normalizar_conteos(subset_obj)
