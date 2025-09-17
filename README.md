@@ -148,6 +148,8 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas:
 ```
 </details><br>
 
+Para más información sobre los subsets (tejido y combinación de tratamiento), ver la **Arquitectura del código (subsets como listas)** en la sección [Scripts](#scripts).
+
 ---
 
 ## Requisitos
@@ -279,16 +281,17 @@ Contenido de la carpeta `Scripts/`:
 - `RNAseq_funciones.R`: script con las funciones a utilizar.  
 - `RNAseq_GSE132648_Souza2019.R`: script para analizar datos de Souza et al. (humano).  
 - `RNAseq_GSE153648_Sorokin2023.R`: script para analizar datos de Sorokin et al. (ratón).  
+
   
 ### Arquitectura del código (subsets como listas)
 
-Cada subset (uno por tejido y comparación) es una lista de R que contiene tanto la entrada (conteos y metadatos) como todos los objetos generados durante el análisis. Las funciones reciben un `subset_obj` (la lista correspondiente a un subset), trabajan sobre él y devuelven el mismo `subset_obj` actualizado. De este modo, el estado queda encapsulado y se asegura la reproducibilildad del flujo de trabajo para los distintos subsets.  
+Cada subset (uno por tejido y comparación) se implementa como una lista de R, que incluye los datos de entrada (conteos y metadatos), información relevante sobre ese subset, y todos los objetos generados durante el análisis. Las funciones reciben un `subset_obj` (la lista correspondiente a un subset), trabajan sobre él y devuelven el mismo `subset_obj` actualizado (incluyendo nuevos elementos). De este modo, el estado queda encapsulado y se asegura la reproducibilildad del flujo de trabajo para los distintos subsets.  
 
-Campos típicos de un `subset_obj`:  
-Base: `nombre_subset`, `gse_nr`, `especie`, `tejido`, `tratamiento`, `muestras`, `metadata_df`, `count_matrix`.  
+Campos típicos de un `subset_obj` (lista no ):  
+Información base: `nombre_subset`, `gse_nr`, `especie`, `tejido`, `tratamiento`, `muestras`, `metadata_df`, `count_matrix`.  
 Preprocesado/Exploración: `dds`, `count_matrix_norm`, `vsd`, `vsd_mat`, `vsd_cor`, `meanvar_df`, `pca_plot`.  
-DEA: `results` / `results_lfcshrink`, `results_df`, `results_df_sig`, `count_matrix_norm_sig`.  
-Figuras: `volcano_plot`, `exp_plot`, `exp_plot_emparejado`, etc.  
+Análisis de expresión diferencial: `results` / `results_lfcshrink`, `results_df`, `results_df_sig`, `count_matrix_norm_sig`.  
+Figuras: `volcano_plot`, `exp_plot`, `exp_plot_emparejado`.  
 
 Patrón de uso (encadenado):  
   ```r
