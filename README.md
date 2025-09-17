@@ -317,7 +317,7 @@ Patrón de uso (ejemplo):
 Ventajas de este diseño:  
 Reproducibilidad: cada paso deja sus resultados dentro del mismo objeto.  
 Modularidad: se pueden activar/desactivar bloques sin romper el resto.  
-Inspección sencilla: str(subset_obj) muestra todo el estado del análisis de ese subset; subject_obj$[elemento] muestra el contenido de un elemento.
+Inspección sencilla: `str(subset_obj)` muestra todo el estado del análisis de ese subset; `subject_obj$elemento` muestra un elemento del subset.
 Evita efectos colaterales: se reasigna explícitamente la lista devuelta por cada función.  
   
 **Nota:** para hacer el código más eficiente, se pueden almacenar todos los nombres de las listas en un vector y acceder a las listas a través de sus nombres en formato string; en los “loops” del pipeline se sigue siempre el patrón leer → actualizar → reasignar el subset_obj a partir de sus nombres en formato string, para todos los subsets por igual.  
