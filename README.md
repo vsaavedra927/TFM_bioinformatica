@@ -148,7 +148,7 @@ Nota: las ramas con (*) indican multiplicidad de archivos o carpetas:
 ```
 </details><br>
 
-Para más información sobre los subsets (tejido y combinación de tratamiento), ver la **Arquitectura del código (subsets como listas)** en la sección [Scripts](#scripts).
+Para más información sobre los *subsets* (tejido y combinación de tratamiento), ver la **Arquitectura del código (*subsets* como listas)** en la sección [Scripts](#scripts).
 
 ---
 
@@ -283,9 +283,9 @@ Contenido de la carpeta `Scripts/`:
 - `RNAseq_GSE153648_Sorokin2023.R`: script para analizar datos de Sorokin et al. (ratón).  
 
   
-### Arquitectura del código (subsets como listas)
+### Arquitectura del código (*subsets* como listas)
 
-Cada subset (uno por tejido y comparación) se implementa como una lista de R, que incluye los datos de entrada (conteos y metadatos), información relevante sobre ese subset, y todos los objetos generados durante el análisis. Las funciones reciben un `subset_obj` (la lista correspondiente a un subset), trabajan sobre él y devuelven el mismo `subset_obj` actualizado (incluyendo nuevos elementos). De este modo, el estado queda encapsulado y se asegura la reproducibilildad del flujo de trabajo para los distintos subsets.  
+Cada *subset* (uno por tejido y comparación) se implementa como una lista de R, que incluye los datos de entrada (conteos y metadatos), información relevante sobre ese *subset*, y todos los objetos generados durante el análisis. Las funciones reciben un `subset_obj` (la lista correspondiente a un *subset*), trabajan sobre él y devuelven el mismo `subset_obj` actualizado (incluyendo nuevos elementos). De este modo, el estado queda encapsulado y se asegura la reproducibilildad del flujo de trabajo para los distintos *subsets*.  
 
 Campos típicos de un `subset_obj` (lista no exhaustiva):  
 Información base: `nombre_subset`, `gse_nr`, `especie`, `tejido`, `tratamiento`, `muestras`, `metadata_df`, `count_matrix`.  
@@ -317,10 +317,10 @@ Patrón de uso (ejemplo):
 Ventajas de este diseño:  
 Reproducibilidad: cada paso deja sus resultados dentro del mismo objeto.  
 Modularidad: se pueden activar/desactivar bloques sin romper el resto.  
-Inspección sencilla: `str(subset_obj)` muestra todo el estado del análisis de ese subset; `subject_obj$elemento` muestra un elemento del subset.
+Inspección sencilla: `str(subset_obj)` muestra todo el estado del análisis de ese *subset*; `subject_obj$elemento` muestra un elemento del *subset*.
 Evita efectos colaterales: se reasigna explícitamente la lista devuelta por cada función.  
   
-**Nota:** para hacer el código más eficiente, se pueden almacenar todos los nombres de las listas en un vector y acceder a las listas a través de sus nombres en formato string; en los “loops” del pipeline se sigue siempre el patrón leer → actualizar → reasignar el subset_obj a partir de sus nombres en formato string, para todos los subsets por igual.  
+**Nota:** para hacer el código más eficiente, se pueden almacenar todos los nombres de las listas en un vector y acceder a las listas a través de sus nombres en formato *string*; en los *loops* del pipeline se sigue siempre el patrón leer → actualizar → reasignar el `subset_obj a partir de sus nombres en formato *string*, para todos los *subsets* por igual.  
 
 
 ---
