@@ -236,6 +236,7 @@ Corresponden a los siguientes conjuntos de datos de GEO:
 ## Results 
 Salida (output) de los scripts.  
 Contiene las figuras y tablas resultantes de los análisis de expresión diferencial y de enriquecimiento funcional.
+Contenido de la carpeta `Results/`:
 - `Results_GSE132648_Souza2019/`: carpeta con todos los resultados sobre los datos de humano.  
 - `Results_GSE153648_Sorokin2023/`: carpeta con todos los resultados sobre los datos de ratón.  
 - `resultados_genes_significativos_SorokinSouza.xlsx`: archivo Excel recopilatorio con todos los genes significativos del estudio.    
@@ -274,9 +275,49 @@ Los resultados de Sorokin son para tres tejidos (aorta, hígado y piel de ratón
 ## Scripts
 Scripts de R.  
 Estos scripts usan como entrada (input) los archivos de la carpeta Datasets y generan como salida (output) los archivos de la carpeta Results.  
+Contenido de la carpeta `Scripts/`:
 - `RNAseq_funciones.R`: script con las funciones a utilizar.  
 - `RNAseq_GSE132648_Souza2019.R`: script para analizar datos de Souza et al. (humano).  
 - `RNAseq_GSE153648_Sorokin2023.R`: script para analizar datos de Sorokin et al. (ratón).  
+  
+### Arquitectura del código (subsets como listas)
+
+Cada subset (uno por tejido y comparación) es una lista de R que contiene tanto la entrada (conteos y metadatos) como todos los objetos generados durante el análisis. Las funciones reciben un `subset_obj` (la lista correspondiente a un subset), trabajan sobre él y devuelven el mismo `subset_obj` actualizado. De este modo, el estado queda encapsulado y se asegura la reproducibilildad del flujo de trabajo para los distintos subsets.  
+
+Campos típicos de un `subset_obj`:  
+Base: `nombre_subset`, `gse_nr`, `especie`, `tejido`, `tratamiento`, `muestras`, `metadata_df`, `count_matrix`.  
+Preprocesado/Exploración: `dds`, `count_matrix_norm`, `vsd`, `vsd_mat`, `vsd_cor`, `meanvar_df`, `pca_plot`.  
+DEA: `results` / `results_lfcshrink`, `results_df`, `results_df_sig`, `count_matrix_norm_sig`.  
+Figuras: `volcano_plot`, `exp_plot`, `exp_plot_emparejado`, etc.  
+
+Patrón de uso (encadenado):  
+  ```r
+  subset_obj <- crear_DESeqDataSet(subset_obj, variable_diseno = "tratamiento")
+  subset_obj <- normalizar_conteos(subset_obj)
+  subset_obj <- estudiar_correlacion_datos(subset_obj, heatmap = TRUE, pca = TRUE, colores = set_colores)
+  
+  subset_obj <- aplicar_deseq(subset_obj)
+  subset_obj <- extraer_resultados_log2fcshrink(
+    subset_obj,
+    coeficiente = "tratamiento_DHAsup_vs_Control",
+    metadatos_global = metadata_df_all,
+    reducir_lfc = FALSE, umbral_fdr = 0.05, umbral_lfc = 0.585
+  )
+  
+  subset_obj <- visualizar_resultados(
+    subset_obj, metadatos_global = metadata_df_all, col_metadata = col_metadata_para_exp_plot,
+    umbral_fdr = 0.05, umbral_lfc = 0.585, colores = set_colores,
+    heatmap = TRUE, volcano_plot = TRUE, exp_plot = TRUE, exp_plot_emparejado = FALSE
+  )
+  ```
+
+Ventajas de este diseño:  
+Reproducibilidad: cada paso deja sus resultados dentro del mismo objeto.  
+Modularidad: se pueden activar/desactivar bloques sin romper el resto.  
+Inspección sencilla: str(subset_obj) muestra todo el estado del análisis de ese subset; subject_obj$[elemento] muestra el contenido de un elemento.
+Evita efectos colaterales: se reasigna explícitamente la lista devuelta por cada función.  
+  
+**Nota:** para hacer el código más eficiente, se pueden almacenar todos los nombres de las listas en un vector y acceder a las listas a través de sus nombres en formato string; en los “loops” del pipeline se sigue siempre el patrón leer → actualizar → reasignar el subset_obj a partir de sus nombres en formato string, para todos los subsets por igual.  
 
 
 ---
