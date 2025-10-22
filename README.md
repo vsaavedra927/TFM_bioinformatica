@@ -30,6 +30,7 @@ El flujo en R reproduce: preparación de datos y metadatos, DESeq2 para expresi�
 | **Results/**  | Figuras y tablas generadas por los scripts. |
 | **Scripts/**  | Código en R creado en este trabajo (funciones y pipelines para cada dataset). |
 | **README.md** | Este documento. |
+| **TFM_VictorSaavedra.pdf** | Documento del Trabajo de Fin de Máster. |
 
 
 ### Vista en árbol
@@ -66,7 +67,8 @@ TFM_bioinformatica/
 │  ├─ RNAseq_GSE132648_Souza2019.R
 │  ├─ RNAseq_GSE153648_Sorokin2023.R
 │  └─ RNAseq_funciones.R
-└─ README.md
+├─ README.md
+└─ TFM_VictorSaavedra.pdf
 ```
 
 Nota: las ramas con (*) indican multiplicidad de archivos o carpetas:
