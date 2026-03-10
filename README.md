@@ -29,6 +29,7 @@ El flujo en R reproduce: preparación de datos y metadatos, DESeq2 para expresi�
 | **Datasets/** | Datos de RNA-seq descargados de GEO (conteos sin normalizar). |
 | **Results/**  | Figuras y tablas generadas por los scripts. |
 | **Scripts/**  | Código en R creado en este trabajo (funciones y pipelines para cada dataset). |
+| **_FIGURAS_EJEMPLO/**  | Algunas figuras de ejemplo para visualización rápida. |
 | **README.md** | Este documento. |
 | **TFM_VictorSaavedra.pdf** | Documento del Trabajo de Fin de Máster. |
 
@@ -67,6 +68,8 @@ TFM_bioinformatica/
 │  ├─ RNAseq_GSE132648_Souza2019.R
 │  ├─ RNAseq_GSE153648_Sorokin2023.R
 │  └─ RNAseq_funciones.R
+├─ _FIGURAS_EJEMPLO/
+│  └─ (*) <figuras>.png
 ├─ README.md
 └─ TFM_VictorSaavedra.pdf
 ```
@@ -283,6 +286,10 @@ Contenido de la carpeta `Scripts/`:
 - `RNAseq_funciones.R`: script con las funciones a utilizar.  
 - `RNAseq_GSE132648_Souza2019.R`: script para analizar datos de Souza et al. (humano).  
 - `RNAseq_GSE153648_Sorokin2023.R`: script para analizar datos de Sorokin et al. (ratón).  
+
+
+## _FIGURAS_EJEMPLO
+Algunas figuras generadas durante el proyecto, seleccionadas como ejemplo.  
 
   
 ### Arquitectura del código (*subsets* como listas)
