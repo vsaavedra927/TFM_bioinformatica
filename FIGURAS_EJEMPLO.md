@@ -1,5 +1,7 @@
 # Figuras_ejemplo
 
+[En edición...]
+
 En este documento se recogen algunas figuras que se han ido generando a lo largo del proyecto TFM.
 
 
