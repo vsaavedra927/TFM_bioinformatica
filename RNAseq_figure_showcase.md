@@ -158,8 +158,10 @@ Using the same DGE analysis strategy described for the mouse dataset, I analyzed
 
 A total of 15 genes were identified as significantly differentially expressed between the Oil and Control conditions, including 2 upregulated and 13 downregulated genes. The volcano plot is consistent with this relatively modest transcriptional response, as most genes cluster near log2 fold change zero and only a small number reach the significance threshold.
 
-<img src="Results/Results_GSE132648_Souza2019/volcano_plot_labels_all.png" width="500">
+<p align="left">
+<img src="Results/Results_GSE132648_Souza2019/volcano_plot_labels_all.png" width="500"> <br>
 Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
+</p>
 
 In the heatmap, several Control samples cluster together, suggesting consistent expression patterns among individuals in the control condition. In contrast, samples from the Oil supplementation group show slightly more dispersed expression profiles, reflecting inter-individual variability in the transcriptional response.
 
@@ -173,10 +175,10 @@ Legend: *Aceite*: Oil
 
 As an alternative visualization, the same expression differences can also be represented using violin plots, which illustrate the distribution of normalized expression values across experimental groups. These plots display the same individual data points shown in the paired plots, but summarized as distributions for each condition. While violin plots provide an overview of expression variability, the paired plots above more directly reflect the matched-sample comparisons used in the analysis.
 
-<img src="Results/Results_GSE132648_Souza2019/expression_plot_all_1a15.png" width="1000">
-
+<p align="left">
+<img src="Results/Results_GSE132648_Souza2019/expression_plot_all_1a15.png" width="1000"> <br>
 Note: Each point corresponds to an individual sample included in the paired analysis. The significance stars reflect the statistical significance calculated under the paired study design.
-
+</p>
 
 ## Functional Enrichment Analysis in human blood: GSEA
 
@@ -191,8 +193,6 @@ The ridgeplot provides an alternative visualization of the same enrichment resul
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo.png" width="500">
 </p>
 
-<br>
-
 The enriched pathways are strongly associated with mitochondrial respiration and cellular energy metabolism, including oxidative phosphorylation, electron transport chain activity, and ATP synthesis. The presence of multiple closely related terms reflects the coordinated activation of mitochondrial energy-producing pathways.
 
 To further illustrate these enrichment patterns, the enrichment curves for the three most enriched GO terms are shown below. These plots display how genes belonging to each pathway accumulate at the top of the ranked gene list, producing a positive enrichment signal in the Oil supplementation condition.
@@ -203,8 +203,6 @@ To further illustrate these enrichment patterns, the enrichment curves for the t
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="300">
 </p>
 
-<br>
 The enriched pathways show almost identical adjusted p-values and gene distribution profiles across the ranked gene list. This reflects the redundancy of Gene Ontology terms, as many enriched categories correspond to closely related mitochondrial processes and therefore share a large proportion of genes.
 
-<br>
 Overall, the GSEA results indicate that omega-3 supplementation in human blood is associated with coordinated transcriptional changes in mitochondrial and oxidative metabolic pathways, consistent with the metabolic patterns observed in the mouse dataset.
