@@ -64,6 +64,7 @@ The first two principal components captured most of the variance in the dataset 
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portejido.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portratamiento.png" width="400">
 </p>
+
 Left: colors represent different tissues; Right: colors represent different supplementations. <br>
 Legend: *Hígado*: liver; *Piel*: skin.
 
