@@ -124,7 +124,6 @@ The dotplot below summarizes the enriched GO Biological Process terms among the 
 
 <img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_dotplot_subset_aorta_dhavscontrol.png" width="600">
 
-<br>
 The enriched biological processes are mainly related to mitochondrial function and energy metabolism, such as oxidative phosphorylation and ATP metabolic processes. These results suggest that DHA supplementation may promote metabolic and mitochondrial activity in mouse aortic tissue.
 
 ### Enrichment map
@@ -160,7 +159,6 @@ Using the same DGE analysis strategy described for the mouse dataset, I analyzed
 A total of 15 genes were identified as significantly differentially expressed between the Oil and Control conditions, including 2 upregulated and 13 downregulated genes. The volcano plot is consistent with this relatively modest transcriptional response, as most genes cluster near log2 fold change zero and only a small number reach the significance threshold.
 
 <img src="Results/Results_GSE132648_Souza2019/volcano_plot_labels_all.png" width="500">
-
 Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
 
 In the heatmap, several Control samples cluster together, suggesting consistent expression patterns among individuals in the control condition. In contrast, samples from the Oil supplementation group show slightly more dispersed expression profiles, reflecting inter-individual variability in the transcriptional response.
