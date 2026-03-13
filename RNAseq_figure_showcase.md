@@ -49,7 +49,7 @@ Each point represents a gene, showing the relationship between its mean expressi
 
 To explore the overall structure of the transcriptomic data, I performed a Principal Component Analysis (PCA) on the normalized gene expression matrix. PCA is a dimensionality reduction method that helps visualize the main sources of variance in high-dimensional RNA-seq datasets. By projecting samples into a lower-dimensional space, it becomes easier to detect patterns such as clustering of samples or separation between biological conditions. 
 
-<p align="center">
+<p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portejido.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portratamiento.png" width="400">
 </p>
@@ -60,11 +60,10 @@ Legend: *Hígado*: liver; *Piel*: skin.
 
 The first two principal components captured most of the variance in the dataset and revealed a clear grouping of samples by tissue type (aorta, liver, skin). This indicates that tissue-specific gene expression programs are the main source of variability in the data. In contrast, treatment conditions (Control, DHA, EPA) did not produce a clear separation in this PCA space.<br>
 
-<p align="center">
+<p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_global_portejido.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_global_portratamiento.png" width="400">
 </p>
-
 Left: colors represent different tissues; Right: colors represent different supplementations. <br>
 Legend: *Hígado*: liver; *Piel*: skin.
 
@@ -81,11 +80,10 @@ Volcano plots summarize the results of the differential expression analysis. In 
 
 In the aorta dataset, supplementation with DHA resulted in 278 significantly differentially expressed genes (251 upregulated and 27 downregulated) compared with the Control group. In contrast, EPA supplementation produced 109 significant genes, including 99 upregulated and 10 downregulated genes. These results suggest a stronger transcriptomic response in aortic tissue under DHA supplementation compared with EPA.
 
-<p align="center">
+<p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_epavscontrol.png" width="400">
 </p>
-
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control. <br>
 Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
 
@@ -93,11 +91,10 @@ To further explore these transcriptional patterns, I generated heatmaps showing 
 
 The heatmaps reveal a clear separation between treatment and control samples, reflecting consistent transcriptional changes induced by omega-3 supplementation. Samples cluster according to their treatment condition, while genes with similar expression patterns are grouped together, highlighting coordinated transcriptional responses.
 
-<p align="center">
+<p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_dhavscontrol.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_epavscontrol.png" width="400">
 </p>
-
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control.
 
 
@@ -165,7 +162,7 @@ In the heatmap, several Control samples cluster together, suggesting consistent 
 
 The paired plots illustrate how gene expression changes occur within each individual between the two conditions. For several genes, most individuals show expression shifts in the same direction, supporting the differential expression signal detected by the statistical analysis. Because the study follows a paired experimental design, inter-individual variability is controlled in the statistical model, increasing the power to detect consistent expression changes across individuals. As a result, genes that might not appear significant in an unpaired analysis can reach statistical significance in this paired framework.
 
-<p align="center">
+<p align="left">
 <img src="Results/Results_GSE132648_Souza2019/expression_heatmap_all.png" width="500">
 <img src="Results/Results_GSE132648_Souza2019/expression_plot_emparejado_all.png" width="447">
 </p>
@@ -187,7 +184,7 @@ The dotplot summarizes the most enriched biological processes identified in the 
 
 The ridgeplot provides an alternative visualization of the same enrichment results by displaying the distribution of gene-level statistics for each enriched pathway across the ranked gene list.
 
-<p align="center">
+<p align="left">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_dotplot_Souza_aceitevsplacebo.png" width="450">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo.png" width="500">
 </p>
@@ -198,7 +195,7 @@ The enriched pathways are strongly associated with mitochondrial respiration and
 
 To further illustrate these enrichment patterns, the enrichment curves for the three most enriched GO terms are shown below. These plots display how genes belonging to each pathway accumulate at the top of the ranked gene list, producing a positive enrichment signal in the Oil supplementation condition.
 
-<p align="center">
+<p align="left">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP1_ATP_synthesis_coupled_electron_transport.png" width="300">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP2_mitochondrial_ATP_synthesis_coupled_electron_transport.png" width="300">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="300">
