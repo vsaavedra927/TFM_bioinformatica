@@ -1,5 +1,7 @@
 # RNA-seq Analysis – Figure Showcase
 
+*Author:* Victor Saavedra Yturriagagoitia
+
 This document contains a small selection of figures from my Master's project, illustrating different steps of RNA-seq analyses and visualizations.
 
 The goal is not to summarize the entire study, but rather to highlight a few representative analyses and interpretations included in this repository.
@@ -51,11 +53,11 @@ To explore the overall structure of the transcriptomic data, I performed a Princ
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portejido.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portratamiento.png" width="400">
-</p>
+<img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portratamiento.png" width="400"><br>
 
-Left: colors represent different tissues; Right: colors represent different supplementations. <br>
-Legend: *Hígado*: liver; *Piel*: skin.
+Left: colors represent different tissues; Right: colors represent different supplementations.<br>
+Legend: <i>Hígado</i>: liver; <i>Piel</i>: skin.
+</p>
 
 
 The first two principal components captured most of the variance in the dataset and revealed a clear grouping of samples by tissue type (aorta, liver, skin). This indicates that tissue-specific gene expression programs are the main source of variability in the data. In contrast, treatment conditions (Control, DHA, EPA) did not produce a clear separation in this PCA space.<br>
