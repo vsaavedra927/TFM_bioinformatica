@@ -63,11 +63,12 @@ The first two principal components captured most of the variance in the dataset 
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portejido.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portratamiento.png" width="400">
-</p>
-
+<img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portratamiento.png" width="400"> <br>
 Left: colors represent different tissues; Right: colors represent different supplementations. <br>
 Legend: *Hígado*: liver; *Piel*: skin.
+</p>
+
+
 
 
 
@@ -84,12 +85,12 @@ In the aorta dataset, supplementation with DHA resulted in 278 significantly dif
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_epavscontrol.png" width="400">
-</p>
-
+<img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_epavscontrol.png" width="400"> <br>
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control. <br>
 Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
-<br>
+</p>
+
+
 
 To further explore these transcriptional patterns, I generated heatmaps showing the expression profiles of significant genes across samples. Heatmaps display normalized gene expression values and apply hierarchical clustering to group both genes and samples according to similarity in their expression patterns.
 
@@ -97,9 +98,9 @@ The heatmaps reveal a clear separation between treatment and control samples, re
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_dhavscontrol.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_epavscontrol.png" width="400">
-</p>
+<img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_epavscontrol.png" width="400"> <br>
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control.
+</p>
 
 
 **Extended versions of the heatmaps with full gene labels are available below:**
@@ -168,10 +169,9 @@ The paired plots illustrate how gene expression changes occur within each indivi
 
 <p align="left">
 <img src="Results/Results_GSE132648_Souza2019/expression_heatmap_all.png" width="500">
-<img src="Results/Results_GSE132648_Souza2019/expression_plot_emparejado_all.png" width="447">
-</p>
-
+<img src="Results/Results_GSE132648_Souza2019/expression_plot_emparejado_all.png" width="447"> <br>
 Legend: *Aceite*: Oil
+</p>
 
 As an alternative visualization, the same expression differences can also be represented using violin plots, which illustrate the distribution of normalized expression values across experimental groups. These plots display the same individual data points shown in the paired plots, but summarized as distributions for each condition. While violin plots provide an overview of expression variability, the paired plots above more directly reflect the matched-sample comparisons used in the analysis.
 
