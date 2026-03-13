@@ -53,7 +53,7 @@ To explore the overall structure of the transcriptomic data, I performed a Princ
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portejido.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portratamiento.png" width="400"><br>
+<img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portratamiento.png" width="400">
 
 Left: colors represent different tissues; Right: colors represent different supplementations.<br>
 Legend: <i>Hígado</i>: liver; <i>Piel</i>: skin.
