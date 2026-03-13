@@ -85,6 +85,7 @@ In the aorta dataset, supplementation with DHA resulted in 278 significantly dif
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_epavscontrol.png" width="400">
 </p>
+
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control. <br>
 Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
 <br>
