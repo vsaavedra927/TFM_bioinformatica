@@ -61,8 +61,8 @@ Legend: *Hígado*: liver; *Piel*: skin.
 The first two principal components captured most of the variance in the dataset and revealed a clear grouping of samples by tissue type (aorta, liver, skin). This indicates that tissue-specific gene expression programs are the main source of variability in the data. In contrast, treatment conditions (Control, DHA, EPA) did not produce a clear separation in this PCA space.<br>
 
 <p align="left">
-<img src="Results/Results_GSE153648_Sorokin2023/pca3D_global_portejido.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/pca3D_global_portratamiento.png" width="400">
+<img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portejido.png" width="400">
+<img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portratamiento.png" width="400">
 </p>
 Left: colors represent different tissues; Right: colors represent different supplementations. <br>
 Legend: *Hígado*: liver; *Piel*: skin.
