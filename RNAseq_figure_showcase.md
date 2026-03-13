@@ -130,9 +130,13 @@ The enriched biological processes are mainly related to mitochondrial function a
 
 To further visualize relationships between enriched GO terms, I generated an enrichment map. In this network representation, each node corresponds to a biological process and edges connect terms that share genes. This allows related processes to cluster together, helping identify broader functional themes emerging from the analysis.
 
-<p style="background:white; display:inline-block; padding:10px;">
+<table>
+<tr>
+<td style="background:white; padding:10px;">
 <img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_emapplot_subset_aorta_dhavscontrol.png" width="800">
-</p>
+</td>
+</tr>
+</table>
 
 <br>
 Most enriched terms cluster around mitochondrial function and energy metabolism, including oxidative phosphorylation and ATP metabolic processes. Additional terms related to fatty acid metabolism suggest a coordinated metabolic response. Overall, these patterns indicate that DHA supplementation is associated with increased mitochondrial and metabolic activity in mouse aortic tissue.
