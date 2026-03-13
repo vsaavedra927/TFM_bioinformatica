@@ -8,7 +8,7 @@ These examples focus on key visualization and interpretation steps within a typi
 
 ## Example figures
 
-<p align="center">
+<p align="left">
 
 <img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portejido.png" width="150">
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="230">
@@ -187,8 +187,10 @@ The dotplot summarizes the most enriched biological processes identified in the 
 
 The ridgeplot provides an alternative visualization of the same enrichment results by displaying the distribution of gene-level statistics for each enriched pathway across the ranked gene list.
 
+<p align="center">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_dotplot_Souza_aceitevsplacebo.png" width="450">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo.png" width="500">
+</p>
 
 <br>
 
@@ -196,9 +198,11 @@ The enriched pathways are strongly associated with mitochondrial respiration and
 
 To further illustrate these enrichment patterns, the enrichment curves for the three most enriched GO terms are shown below. These plots display how genes belonging to each pathway accumulate at the top of the ranked gene list, producing a positive enrichment signal in the Oil supplementation condition.
 
+<p align="center">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP1_ATP_synthesis_coupled_electron_transport.png" width="300">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP2_mitochondrial_ATP_synthesis_coupled_electron_transport.png" width="300">
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="300">
+</p>
 
 <br>
 The enriched pathways show almost identical adjusted p-values and gene distribution profiles across the ranked gene list. This reflects the redundancy of Gene Ontology terms, as many enriched categories correspond to closely related mitochondrial processes and therefore share a large proportion of genes.
