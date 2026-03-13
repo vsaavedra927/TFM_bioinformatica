@@ -87,6 +87,7 @@ In the aorta dataset, supplementation with DHA resulted in 278 significantly dif
 </p>
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control. <br>
 Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
+<br>
 
 To further explore these transcriptional patterns, I generated heatmaps showing the expression profiles of significant genes across samples. Heatmaps display normalized gene expression values and apply hierarchical clustering to group both genes and samples according to similarity in their expression patterns.
 
