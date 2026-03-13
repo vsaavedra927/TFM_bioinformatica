@@ -16,11 +16,11 @@ These examples focus on key visualization and interpretation steps within a typi
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="230">
 <img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_dhavscontrol.png" width="120">
 <img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_dotplot_subset_aorta_dhavscontrol.png" width="150">
-<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="150">
+<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="150"> <br>
+*Note: The images above are small previews of the figures included in this document. Bigger versions are displayed in the corresponding sections below.*
 
 </p>
 
-*Note: The images above are small previews of the figures included in this document. Bigger versions are displayed in the corresponding sections below.*
 
 ## Contents
 
@@ -65,7 +65,7 @@ The first two principal components captured most of the variance in the dataset 
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portejido.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portratamiento.png" width="400"> <br>
 Left: colors represent different tissues; Right: colors represent different supplementations. <br>
-Legend: *Hígado*: liver; *Piel*: skin.
+Legend: <i>Hígado</i>: liver; <i>Piel</i>: skin.
 </p>
 
 
@@ -87,7 +87,7 @@ In the aorta dataset, supplementation with DHA resulted in 278 significantly dif
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="400">
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_epavscontrol.png" width="400"> <br>
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control. <br>
-Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
+Legend: <i>Infraexpresado</i>: under-expressed; <i>No significativo</i>: non-significant; <i>Sobreexpresado</i>: over-expressed.
 </p>
 
 
@@ -160,7 +160,7 @@ A total of 15 genes were identified as significantly differentially expressed be
 
 <p align="left">
 <img src="Results/Results_GSE132648_Souza2019/volcano_plot_labels_all.png" width="500"> <br>
-Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
+Legend: <i>Infraexpresado</i>: under-expressed; <i>No significativo</i>: non-significant; <i>Sobreexpresado</i>: over-expressed.
 </p>
 
 In the heatmap, several Control samples cluster together, suggesting consistent expression patterns among individuals in the control condition. In contrast, samples from the Oil supplementation group show slightly more dispersed expression profiles, reflecting inter-individual variability in the transcriptional response.
@@ -170,7 +170,7 @@ The paired plots illustrate how gene expression changes occur within each indivi
 <p align="left">
 <img src="Results/Results_GSE132648_Souza2019/expression_heatmap_all.png" width="500">
 <img src="Results/Results_GSE132648_Souza2019/expression_plot_emparejado_all.png" width="447"> <br>
-Legend: *Aceite*: Oil
+Legend: <i>Aceite</i>: Oil
 </p>
 
 As an alternative visualization, the same expression differences can also be represented using violin plots, which illustrate the distribution of normalized expression values across experimental groups. These plots display the same individual data points shown in the paired plots, but summarized as distributions for each condition. While violin plots provide an overview of expression variability, the paired plots above more directly reflect the matched-sample comparisons used in the analysis.
