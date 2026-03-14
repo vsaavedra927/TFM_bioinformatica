@@ -4,6 +4,7 @@ Universidad Internacional de la Rioja (UNIR)
 Autor: Víctor Saavedra Yturriagagoitia  
 Fecha: Septiembre 2025  
 
+> For a quick visual overview of the main RNA-seq analyses and figures, see [RNAseq_figure_showcase.md](RNAseq_figure_showcase.md).
 
 Este repositorio acompaña el Trabajo de Fin de Máster *“Análisis transcriptómico y caracterización funcional de biomarcadores inflamatorios en respuesta a la suplementación con ácidos grasos omega-3”*. Reúne el código en R (funciones y pipelines), los datasets de RNA-seq descargados de GEO ([GSE132648](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132648) para humano; [GSE153648](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153648) para ratón) y todas las figuras y tablas generadas.  
   
@@ -29,8 +30,8 @@ El flujo en R reproduce: preparación de datos y metadatos, DESeq2 para expresi�
 | **Datasets/** | Datos de RNA-seq descargados de GEO (conteos sin normalizar). |
 | **Results/**  | Figuras y tablas generadas por los scripts. |
 | **Scripts/**  | Código en R creado en este trabajo (funciones y pipelines para cada dataset). |
-| **FIGURAS_EJEMPLO**  | Algunas figuras de ejemplo para visualización rápida. |
 | **README.md** | Este documento. |
+| **RNAseq_figure_showcase.md**  | Resumen visual del análisis RNA-seq. |
 | **TFM_VictorSaavedra.pdf** | Documento del Trabajo de Fin de Máster. |
 
 
@@ -68,8 +69,8 @@ TFM_bioinformatica/
 │  ├─ RNAseq_GSE132648_Souza2019.R
 │  ├─ RNAseq_GSE153648_Sorokin2023.R
 │  └─ RNAseq_funciones.R
-├─ FIGURAS_EJEMPLO.md
 ├─ README.md
+├─ RNAseq_figure_showcase.md
 └─ TFM_VictorSaavedra.pdf
 ```
 
