@@ -193,8 +193,8 @@ The dotplot summarizes the most enriched biological processes identified in the 
 The ridgeplot provides an alternative visualization of the same enrichment results by displaying the distribution of gene-level statistics for each enriched pathway across the ranked gene list.
 
 <p align="left">
-<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_dotplot_Souza_aceitevsplacebo.png" width="450">
-<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo.png" width="500">
+<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_dotplot_Souza_aceitevsplacebo_white.png" width="450">
+<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo_white.png" width="500">
 </p>
 
 The enriched pathways are strongly associated with mitochondrial respiration and cellular energy metabolism, including oxidative phosphorylation, electron transport chain activity, and ATP synthesis. The presence of multiple closely related terms reflects the coordinated activation of mitochondrial energy-producing pathways.
