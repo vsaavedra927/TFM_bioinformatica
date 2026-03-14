@@ -133,7 +133,7 @@ To further visualize relationships between enriched GO terms, I generated an enr
 <table>
 <tr>
 <td style="background:white; padding:10px;">
-<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_emapplot_subset_aorta_dhavscontrol.png" width="800">
+<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_emapplot_subset_aorta_dhavscontrol_white.png" width="800">
 </td>
 </tr>
 </table>
@@ -146,7 +146,7 @@ Most enriched terms cluster around mitochondrial function and energy metabolism,
 Finally, I generated a gene-concept network to visualize how individual genes contribute to multiple enriched biological processes. In this plot, GO terms are connected to the genes associated with them, and gene colors reflect their log2 fold change. This representation highlights genes that may participate in several related metabolic pathways.
 
 <div style="background-color:white; display:inline-block; padding:10px;">
-<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_cnetplot_subset_aorta_dhavscontrol.png" width="800">
+<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_cnetplot_subset_aorta_dhavscontrol_white.png" width="800">
 </div>
 
 <br>
@@ -193,8 +193,8 @@ The dotplot summarizes the most enriched biological processes identified in the 
 The ridgeplot provides an alternative visualization of the same enrichment results by displaying the distribution of gene-level statistics for each enriched pathway across the ranked gene list.
 
 <p align="left">
-<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_dotplot_Souza_aceitevsplacebo_white.png" width="450">
-<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo_white.png" width="500">
+<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_dotplot_Souza_aceitevsplacebo.png" width="450">
+<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo.png" width="500">
 </p>
 
 The enriched pathways are strongly associated with mitochondrial respiration and cellular energy metabolism, including oxidative phosphorylation, electron transport chain activity, and ATP synthesis. The presence of multiple closely related terms reflects the coordinated activation of mitochondrial energy-producing pathways.
