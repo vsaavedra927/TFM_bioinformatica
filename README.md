@@ -30,7 +30,7 @@ El flujo en R reproduce: preparación de datos y metadatos, DESeq2 para expresi�
 | **Datasets/** | Datos de RNA-seq descargados de GEO (conteos sin normalizar). |
 | **Results/**  | Figuras y tablas generadas por los scripts. |
 | **Scripts/**  | Código en R creado en este trabajo (funciones y pipelines para cada dataset). |
-| **FIGURAS_EJEMPLO**  | Algunas figuras de ejemplo para visualización rápida. |
+| **RNAseq_figure_showcase.md**  | Resumen visual del análisis RNA-seq. |
 | **README.md** | Este documento. |
 | **TFM_VictorSaavedra.pdf** | Documento del Trabajo de Fin de Máster. |
 
