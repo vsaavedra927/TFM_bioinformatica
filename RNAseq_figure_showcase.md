@@ -138,7 +138,6 @@ To further visualize relationships between enriched GO terms, I generated an enr
 </tr>
 </table>
 
-<br>
 Most enriched terms cluster around mitochondrial function and energy metabolism, including oxidative phosphorylation and ATP metabolic processes. Additional terms related to fatty acid metabolism suggest a coordinated metabolic response. Overall, these patterns indicate that DHA supplementation is associated with increased mitochondrial and metabolic activity in mouse aortic tissue.
 
 ### Gene-concept network (cnetplot)
