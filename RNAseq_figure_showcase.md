@@ -16,11 +16,11 @@ These examples focus on key visualization and interpretation steps within a typi
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="230">
 <img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_dhavscontrol.png" width="120">
 <img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_dotplot_subset_aorta_dhavscontrol.png" width="150">
-<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="150">
+<img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="150"> <br>
+*Note: The images above are small previews of the figures included in this document. Bigger versions are displayed in the corresponding sections below.*
 
 </p>
 
-*Note: The images above are small previews of the figures included in this document. Bigger versions are displayed in the corresponding sections below.*
 
 ## Contents
 
@@ -53,8 +53,8 @@ To explore the overall structure of the transcriptomic data, I performed a Princ
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portejido.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portratamiento.png" width="400">
-Left: colors represent different tissues; Right: colors represent different supplementations.<br>
+<img src="Results/Results_GSE153648_Sorokin2023/pca_plot_all_portratamiento.png" width="400"> <br>
+Left: colors represent different tissues; Right: colors represent different supplementations. <br>
 Legend: <i>Hígado</i>: liver; <i>Piel</i>: skin.
 </p>
 
@@ -63,11 +63,12 @@ The first two principal components captured most of the variance in the dataset 
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portejido.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portratamiento.png" width="400">
+<img src="Results/Results_GSE153648_Sorokin2023/pca3D_plot_global_portratamiento.png" width="400"> <br>
+Left: colors represent different tissues; Right: colors represent different supplementations. <br>
+Legend: <i>Hígado</i>: liver; <i>Piel</i>: skin.
 </p>
 
-Left: colors represent different tissues; Right: colors represent different supplementations. <br>
-Legend: *Hígado*: liver; *Piel*: skin.
+
 
 
 
@@ -84,12 +85,12 @@ In the aorta dataset, supplementation with DHA resulted in 278 significantly dif
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_dhavscontrol.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_epavscontrol.png" width="400">
+<img src="Results/Results_GSE153648_Sorokin2023/volcano_plot_labels_aorta_epavscontrol.png" width="400"> <br>
+Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control. <br>
+Legend: <i>Infraexpresado</i>: under-expressed; <i>No significativo</i>: non-significant; <i>Sobreexpresado</i>: over-expressed.
 </p>
 
-Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control. <br>
-Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
-<br>
+
 
 To further explore these transcriptional patterns, I generated heatmaps showing the expression profiles of significant genes across samples. Heatmaps display normalized gene expression values and apply hierarchical clustering to group both genes and samples according to similarity in their expression patterns.
 
@@ -97,9 +98,9 @@ The heatmaps reveal a clear separation between treatment and control samples, re
 
 <p align="left">
 <img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_dhavscontrol.png" width="400">
-<img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_epavscontrol.png" width="400">
-</p>
+<img src="Results/Results_GSE153648_Sorokin2023/expression_heatmap_aorta_epavscontrol.png" width="400"> <br>
 Left: supplementation with DHA vs Control; Right: supplementation with EPA vs Control.
+</p>
 
 
 **Extended versions of the heatmaps with full gene labels are available below:**
@@ -123,16 +124,19 @@ The dotplot below summarizes the enriched GO Biological Process terms among the 
 
 <img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_dotplot_subset_aorta_dhavscontrol.png" width="600">
 
-<br>
 The enriched biological processes are mainly related to mitochondrial function and energy metabolism, such as oxidative phosphorylation and ATP metabolic processes. These results suggest that DHA supplementation may promote metabolic and mitochondrial activity in mouse aortic tissue.
 
 ### Enrichment map
 
 To further visualize relationships between enriched GO terms, I generated an enrichment map. In this network representation, each node corresponds to a biological process and edges connect terms that share genes. This allows related processes to cluster together, helping identify broader functional themes emerging from the analysis.
 
-<div style="background-color:white; display:inline-block; padding:10px;">
-<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_emapplot_subset_aorta_dhavscontrol.png" width="800">
-</div>
+<table>
+<tr>
+<td style="background:white; padding:10px;">
+<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_emapplot_subset_aorta_dhavscontrol_white.png" width="800">
+</td>
+</tr>
+</table>
 
 <br>
 Most enriched terms cluster around mitochondrial function and energy metabolism, including oxidative phosphorylation and ATP metabolic processes. Additional terms related to fatty acid metabolism suggest a coordinated metabolic response. Overall, these patterns indicate that DHA supplementation is associated with increased mitochondrial and metabolic activity in mouse aortic tissue.
@@ -142,7 +146,7 @@ Most enriched terms cluster around mitochondrial function and energy metabolism,
 Finally, I generated a gene-concept network to visualize how individual genes contribute to multiple enriched biological processes. In this plot, GO terms are connected to the genes associated with them, and gene colors reflect their log2 fold change. This representation highlights genes that may participate in several related metabolic pathways.
 
 <div style="background-color:white; display:inline-block; padding:10px;">
-<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_cnetplot_subset_aorta_dhavscontrol.png" width="800">
+<img src="Results/Results_GSE153648_Sorokin2023/Enriquecimiento_Funcional/subset_aorta_dhavscontrol/ORA_GO_BP_UP_cnetplot_subset_aorta_dhavscontrol_white.png" width="800">
 </div>
 
 <br>
@@ -158,9 +162,10 @@ Using the same DGE analysis strategy described for the mouse dataset, I analyzed
 
 A total of 15 genes were identified as significantly differentially expressed between the Oil and Control conditions, including 2 upregulated and 13 downregulated genes. The volcano plot is consistent with this relatively modest transcriptional response, as most genes cluster near log2 fold change zero and only a small number reach the significance threshold.
 
-<img src="Results/Results_GSE132648_Souza2019/volcano_plot_labels_all.png" width="500">
-
-Legend: *Infraexpresado*: under-expressed; *No significativo*: non-significant; *Sobreexpresado*: over-expressed.
+<p align="left">
+<img src="Results/Results_GSE132648_Souza2019/volcano_plot_labels_all.png" width="500"> <br>
+Legend: <i>Infraexpresado</i>: under-expressed; <i>No significativo</i>: non-significant; <i>Sobreexpresado</i>: over-expressed.
+</p>
 
 In the heatmap, several Control samples cluster together, suggesting consistent expression patterns among individuals in the control condition. In contrast, samples from the Oil supplementation group show slightly more dispersed expression profiles, reflecting inter-individual variability in the transcriptional response.
 
@@ -168,17 +173,16 @@ The paired plots illustrate how gene expression changes occur within each indivi
 
 <p align="left">
 <img src="Results/Results_GSE132648_Souza2019/expression_heatmap_all.png" width="500">
-<img src="Results/Results_GSE132648_Souza2019/expression_plot_emparejado_all.png" width="447">
+<img src="Results/Results_GSE132648_Souza2019/expression_plot_emparejado_all.png" width="447"> <br>
+Legend: <i>Aceite</i>: Oil
 </p>
-
-Legend: *Aceite*: Oil
 
 As an alternative visualization, the same expression differences can also be represented using violin plots, which illustrate the distribution of normalized expression values across experimental groups. These plots display the same individual data points shown in the paired plots, but summarized as distributions for each condition. While violin plots provide an overview of expression variability, the paired plots above more directly reflect the matched-sample comparisons used in the analysis.
 
-<img src="Results/Results_GSE132648_Souza2019/expression_plot_all_1a15.png" width="1000">
-
+<p align="left">
+<img src="Results/Results_GSE132648_Souza2019/expression_plot_all_1a15.png" width="1000"> <br>
 Note: Each point corresponds to an individual sample included in the paired analysis. The significance stars reflect the statistical significance calculated under the paired study design.
-
+</p>
 
 ## Functional Enrichment Analysis in human blood: GSEA
 
@@ -193,8 +197,6 @@ The ridgeplot provides an alternative visualization of the same enrichment resul
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_ridgeplot_Souza_aceitevsplacebo.png" width="500">
 </p>
 
-<br>
-
 The enriched pathways are strongly associated with mitochondrial respiration and cellular energy metabolism, including oxidative phosphorylation, electron transport chain activity, and ATP synthesis. The presence of multiple closely related terms reflects the coordinated activation of mitochondrial energy-producing pathways.
 
 To further illustrate these enrichment patterns, the enrichment curves for the three most enriched GO terms are shown below. These plots display how genes belonging to each pathway accumulate at the top of the ranked gene list, producing a positive enrichment signal in the Oil supplementation condition.
@@ -205,8 +207,6 @@ To further illustrate these enrichment patterns, the enrichment curves for the t
 <img src="Results/Results_GSE132648_Souza2019/Enriquecimiento_Funcional/Souza_aceitevsplacebo/GSEA_GO_BP_Souza_aceitevsplacebo_gseaplot2_TOP3_oxidative_phosphorylation.png" width="300">
 </p>
 
-<br>
 The enriched pathways show almost identical adjusted p-values and gene distribution profiles across the ranked gene list. This reflects the redundancy of Gene Ontology terms, as many enriched categories correspond to closely related mitochondrial processes and therefore share a large proportion of genes.
 
-<br>
 Overall, the GSEA results indicate that omega-3 supplementation in human blood is associated with coordinated transcriptional changes in mitochondrial and oxidative metabolic pathways, consistent with the metabolic patterns observed in the mouse dataset.
