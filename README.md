@@ -4,12 +4,12 @@ Universidad Internacional de la Rioja (UNIR)
 Autor: Víctor Saavedra Yturriagagoitia  
 Fecha: Septiembre 2025  
 
+> For a quick visual overview of the main RNA-seq analyses and figures, see [RNAseq_figure_showcase.md](RNAseq_figure_showcase.md).
 
 Este repositorio acompaña el Trabajo de Fin de Máster *“Análisis transcriptómico y caracterización funcional de biomarcadores inflamatorios en respuesta a la suplementación con ácidos grasos omega-3”*. Reúne el código en R (funciones y pipelines), los datasets de RNA-seq descargados de GEO ([GSE132648](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132648) para humano; [GSE153648](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE153648) para ratón) y todas las figuras y tablas generadas.  
   
 El flujo en R reproduce: preparación de datos y metadatos, DESeq2 para expresión diferencial, visualización (correlación, PCA, volcano, heatmaps, plots de expresión) y enriquecimiento funcional (GO/KEGG/Reactome) con clusterProfiler, ReactomePA y enrichplot.  
 
-> For a quick visual overview of the main RNA-seq analyses and figures, see [RNAseq_figure_showcase.md](RNAseq_figure_showcase.md).
 
 ## Índice
 - [Estructura del repositorio](#estructura-del-repositorio)
